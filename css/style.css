@@ -86,21 +86,19 @@ footer {
 }
 
 .help-btn {
-  background-color: #ffa726;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 1.2em;
-  cursor: pointer;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  text-transform: uppercase;
-  
+  display: inline-block; /* لجعل الرابط يتصرف كزر */
+  text-decoration: none; /* إزالة الخط السفلي */
+  color: inherit; /* الحفاظ على لون النص */
 }
-.help-btn a{
-  text-decoration: none;
-  color: #5d4037;
+
+.help-btn button {
+  background-color: #007bff; /* اللون الخلفي للزر */
+  color: white; /* لون النص داخل الزر */
+  border: none; /* إزالة الحدود */
+  padding: 10px 20px; /* الحشو */
+  font-size: 16px; /* حجم الخط */
+  cursor: pointer; /* تغيير المؤشر عند المرور على الزر */
+  border-radius: 5px; /* زوايا مدورة */
 }
 
 .help-btn:hover {
