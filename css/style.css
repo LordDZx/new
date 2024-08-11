@@ -9,7 +9,82 @@ body {
   background-repeat: no-repeat;
   color: #fff;
   overflow-x: hidden;
+  min-height: 100vh;
+
 }
+.wrapper {
+  position: fixed;
+  bottom: 50px;
+  right: -450px;
+  max-width: 345px;
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px 25px 22px;
+  transition: right 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.wrapper.show {
+  right: 20px;
+}
+.wrapper header {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+header i {
+  color: #4070f4;
+  font-size: 32px;
+}
+header h2 {
+  color: #4070f4;
+  font-weight: 500;
+}
+.wrapper .data {
+  margin-top: 16px;
+}
+.wrapper .data p {
+  color: #333;
+  font-size: 16px;
+}
+.data p a {
+  color: #4070f4;
+  text-decoration: none;
+}
+.data p a:hover {
+  text-decoration: underline;
+}
+.wrapper .buttons {
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.buttons .button {
+  border: none;
+  color: #fff;
+  padding: 8px 0;
+  border-radius: 4px;
+  background: #4070f4;
+  cursor: pointer;
+  width: calc(100% / 2 - 10px);
+  transition: all 0.2s ease;
+}
+.buttons #acceptBtn:hover {
+  background-color: #034bf1;
+}
+#declineBtn {
+  border: 2px solid #4070f4;
+  background-color: #fff;
+  color: #4070f4;
+}
+#declineBtn:hover {
+  background-color: #4070f4;
+  color: #fff;
+}
+
+
 
 .container {
   text-align: center;
@@ -86,25 +161,29 @@ footer {
 }
 
 .help-btn {
-  display: inline-block; /* لجعل الرابط يتصرف كزر */
-  text-decoration: none; /* إزالة الخط السفلي */
-  color: inherit; /* الحفاظ على لون النص */
-  padding: 12px 24px; /* زيادة الحجم الداخلي للزر */
-  border-radius: 5px; /* تدوير الزوايا */
-  background-color: gold; /* لون خلفية الزر */
-  text-align: center; /* توسيط النص */
+  background-color: #ffa726;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.2em;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-transform: uppercase;
+  
+}
+.help-btn a{
+  text-decoration: none;
+  color: #5d4037;
 }
 
-.help-btn button {
-  background-color: gold; /* اللون الخلفي للزر */
-  color: black; /* لون النص داخل الزر */
-  border-radius: 5px; /* إزالة الحدود */
-  padding: 10px 20px; /* الحشو */
-  font-size: 16px; /* حجم الخط */
-  cursor: pointer; /* تغيير المؤشر عند المرور على الزر */
-  border-radius: 5px; /* زوايا مدورة */
-}
 
+
+.help-btn:hover {
+  background-color: #fb8c00;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
+}
 /* لجعل التصميم متجاوبًا مع الشاشات الصغيرة */
 @media (max-width: 768px) {
   .tool {
