@@ -4,7 +4,9 @@
     color: white;
     font-family: sans-serif;
     text-decoration: none;
-
+        cursor: url('/img/mouse1.png'), auto;
+   
+    
 }
 body{
    background: linear-gradient(to bottom, #283048, #71929e);
