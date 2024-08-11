@@ -89,12 +89,16 @@ footer {
   display: inline-block; /* لجعل الرابط يتصرف كزر */
   text-decoration: none; /* إزالة الخط السفلي */
   color: inherit; /* الحفاظ على لون النص */
+  padding: 12px 24px; /* زيادة الحجم الداخلي للزر */
+  border-radius: 5px; /* تدوير الزوايا */
+  background-color: #gold; /* لون خلفية الزر */
+  text-align: center; /* توسيط النص */
 }
 
 .help-btn button {
-  background-color: #007bff; /* اللون الخلفي للزر */
+  background-color: black; /* اللون الخلفي للزر */
   color: white; /* لون النص داخل الزر */
-  border: none; /* إزالة الحدود */
+  border-radius: 5px; /* إزالة الحدود */
   padding: 10px 20px; /* الحشو */
   font-size: 16px; /* حجم الخط */
   cursor: pointer; /* تغيير المؤشر عند المرور على الزر */
