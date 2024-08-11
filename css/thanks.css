@@ -1,3 +1,6 @@
+*{    cursor: url('/img/mouse1.png'), auto;
+}
+
 /* Reset default styles */
 body, h1, h2, p, ul, li, button {
     margin: 0;
