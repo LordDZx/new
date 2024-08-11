@@ -14,7 +14,9 @@
 
 *::before,
 *::after {
-  box-sizing: inherit; }
+  box-sizing: inherit; 
+  cursor: url('/img/mouse1.png'), auto;
+}
   .header {
     display: flex;
     justify-content: center;
