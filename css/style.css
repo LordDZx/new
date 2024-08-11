@@ -91,12 +91,12 @@ footer {
   color: inherit; /* الحفاظ على لون النص */
   padding: 12px 24px; /* زيادة الحجم الداخلي للزر */
   border-radius: 5px; /* تدوير الزوايا */
-  background-color: #gold; /* لون خلفية الزر */
+  background-color: gold; /* لون خلفية الزر */
   text-align: center; /* توسيط النص */
 }
 
 .help-btn button {
-  background-color: black; /* اللون الخلفي للزر */
+  background-color: gold; /* اللون الخلفي للزر */
   color: white; /* لون النص داخل الزر */
   border-radius: 5px; /* إزالة الحدود */
   padding: 10px 20px; /* الحشو */
