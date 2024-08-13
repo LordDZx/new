@@ -32,8 +32,8 @@
                 <br>شكرا لك لأرسال رأيك او اقتراحك لنا عن موقعنا
                 <br>ان كان هناك المزيد من الاقتراحات او لديك رأي اخر لا تترد في التواصل معنا
                 <br>اضغط علي الزر في الاسفل للعوده الي الموقع الاصلي
-                </p><a href=”https://empire-wiki.netlify.app/” _target"_self">
-                <button id="goHomeButton">انتقل إلى موقعنا</button></a>
+                </p>
+                <button id="goHomeButton">انتقل إلى موقعنا</button>
             </div>
         </div>
     </main>
@@ -46,5 +46,12 @@
     </footer>
 
     <script src="scriptss.js"></script>
+        <script>
+        // هذا السكربت يجعل الزر يفتح الرابط في نفس الصفحة.
+        document.getElementById('goHomeButton').addEventListener('click', function() {
+            window.location.href = 'https://empire-wiki.netlify.app/';
+        });
+    </script>
+
 </body>
 </html>
