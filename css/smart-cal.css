@@ -1,195 +1,239 @@
-*{
-    padding: 0;
+/* تعيين المؤشر عند المرور فوق العناصر */
+* {
+    cursor: url('/img/mouse1.png'), auto;
+  }
+  
+  /* تعيين أساليب عامة للجسم */
+  body {
     margin: 0;
-    color: white;
-    font-family: sans-serif;
-        cursor: url('/img/mouse1.png'), auto;
-    
-    
-}
-body{
-    background-color: #001;
-    display: flex;
-    margin-left: 240px; /* add this line */
-}
-
-.homesss {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 3px solid rgb(255, 0, 0);
-    flex-shrink: 0;
-}
-.homesss img{
-    width: 100%;
-}
-.profile{
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-.profile h2{
-    font-size: 20px;
-    text-transform: capitalize;
-}
-
-
-.menu{
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(/img/background\ empire.png);
+    background-repeat: no-repeat;
+    background-size: cover; /* التأكد من ملء الخلفية بالكامل */
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+  
+  /* الأسلوب الخاص بصندوق الرسائل أو الإشعارات */
+  .wrapper {
     position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #123;
-    width: 200px;
-    height: 100vh;
-    padding: 20px;
-    overflow-y: auto;
-    transition: .5s;
-    z-index: 1000;
-
-}
-.menu:hover{
-    width: 260px;
-    transition: .5s;
-}
-ul{
-    list-style: none;
-    position: relative;
-    height: 95%;
-}
-ul li a{
-    display: block;
-    text-decoration: none;
-    padding: 10px;
-    margin: 10px 0;
+    bottom: 50px;
+    right: -450px;
+    max-width: 345px;
+    width: 100%;
+    background: #fff;
     border-radius: 8px;
+    padding: 15px 25px 22px;
+    transition: right 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  .wrapper.show {
+    right: 20px;
+  }
+  
+  /* أسلوب ترويسة الصندوق */
+  .wrapper header {
     display: flex;
     align-items: center;
-    gap: 40px;
-}
-ul li a:hover, .smart-cal{
-    background-color: #ffffff55;
-    border-radius: 7%;
-
-}
-
-.yout1{
-    position: absolute;
-    bottom: 0;
+    column-gap: 15px;
+  }
+  header i {
+    color: #4070f4;
+    font-size: 21px; /* تقليل حجم الأيقونة */
+  }
+  header h2 {
+    color: #4070f4;
+    font-weight: 500;
+    font-size: 1.2em; /* تقليل حجم النص */
+  }
+  
+  /* الأسلوب لبيانات الصندوق */
+  .wrapper .data {
+    margin-top: 16px;
+  }
+  .wrapper .data p {
+    color: #333;
+    font-size: 11px; /* تقليل حجم النص */
+  }
+  .data p a {
+    color: #4070f4;
+    text-decoration: none;
+  }
+  .data p a:hover {
+    text-decoration: underline;
+  }
+  
+  /* أسلوب الأزرار داخل الصندوق */
+  .wrapper .buttons {
+    margin-top: 16px;
     width: 100%;
-
-}
-.yout1 a{
-    background-color: #a00;
-    
-}
-ul li a i{
-    font-size: 30px;
-
-}
-.menu_opi{
-    width: 100%;
-    margin: 10px;
-    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 8px;
-    margin: 30px 10px;
+  }
+  .buttons .button {
+    border: none;
+    color: #fff;
+    padding: 6px 0; /* تقليل الحشوة الداخلية */
+    border-radius: 4px;
+    background: #4070f4;
+    cursor: pointer;
+    width: calc(50% - 10px);
+    transition: all 0.2s ease;
+  }
+  .buttons #acceptBtn:hover {
+    background-color: #034bf1;
+  }
+  #declineBtn {
+    border: 2px solid #4070f4;
+    background-color: #fff;
+    color: #4070f4;
+  }
+  #declineBtn:hover {
+    background-color: #4070f4;
+    color: #fff;
+  }
+  
+  /* الأسلوب للحاوية الرئيسية */
+  .container {
+    text-align: center;
+    padding: 33px 13px; /* تقليل الحشوة الداخلية */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .container.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* أسلوب ترويسة الصفحة */
+  header h1 {
+    color: #ffdd59;
+    font-size: 1.67em; /* تقليل حجم النص */
+    margin-bottom: 27px; /* تقليل المسافة السفلية */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* الأسلوب لشبكة الأدوات */
+  /* تعديل شبكة الأدوات لضمان عدم تداخل الصناديق */
+  .tool-grid {
+    display: flex;
     flex-wrap: wrap;
-    list-style: none;
-    text-decoration: none;
-}
-.container  a{
-    width: 450px; /* ضبط عرض الحاوية */
-    margin: 0 ; /* مركزها أفقيا*/
-    background-color:  #e7ae4b ; /*أضف لون الخلفية لرؤية الحاوية*/
-    padding: 10px; /*أضف بعض الفراغ لجعله يبدو أجمل*/
-    border-radius: 8%; /*علشان نخليه بدل مربع دائره يدي مظهر جميل*/
+    justify-content: center;
+    gap: 10px; /* ضبط المسافة بين العناصر */
+  }
+  
+  /* أسلوب كل أداة */
+  .tool {
+    background-color: #4e342e;
+    border-radius: 10px;
+    padding: 16px; /* زيادة الحشوة قليلاً لضبط الحجم */
+    width: 148px; /* زيادة العرض بنسبة 15% من الحجم المعدل */
+    height: 166px; /* زيادة الارتفاع بنسبة 15% من الحجم المعدل */
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5); /* زيادة الظل قليلاً */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    opacity: 0.9;
     display: flex;
-    list-style: none;
-    color: #123;
+    flex-direction: column;
+    align-items: center; /* توحيد محاذاة المحتوى أفقياً */
+    justify-content: center; /* توحيد محاذاة المحتوى عمودياً */
+  }
+  
+  .tool img {
+    width: 60px; /* زيادة حجم الصورة قليلاً */
+    height: 60px; /* زيادة ارتفاع الصورة قليلاً */
+    margin-bottom: 10px; /* زيادة المسافة تحت الصورة */
+    filter: drop-shadow(1px 2px 4px black); /* زيادة تأثير الظل على الصورة */
+  }
+  
+  .tool-grid a {
+    color: #e7a28f;
     text-decoration: none;
-}
-.menu_opi{
-    width: 100%;
-    margin: 10px;
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    list-style: none;
+  }
+  
+  .tool p {
+    font-size: 0.77em; /* زيادة حجم النص بنسبة 15% */
+    color: white; /* لون النص */
+    opacity: 0; /* النص غير ظاهر بشكل افتراضي */
+    transition: opacity 0.3s ease; /* إضافة تأثير الانتقال للشفافية */
+    white-space: nowrap; /* منع التفاف النص */
+    text-align: center; /* توحيد محاذاة النص */
+  }
+  
+  /* تأثيرات التمرير على الأداة */
+  .tool:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); /* زيادة الظل عند التمرير */
+    opacity: 1;
+  }
+  
+  .tool:hover p {
+    opacity: 1; /* إظهار النص عند التمرير */
+  }
+  
+  /* أسلوب التذييل */
+  footer {
+    margin-top: 33px; /* تقليل المسافة العلوية */
+  }
+  .help-btn {
+    background-color: #ffa726;
+    border: none;
+    padding: 10px 20px; /* الحفاظ على الحشوة الداخلية */
+    border-radius: 5px;
+    color: #fff;
+    font-size: 0.9em; /* تقليل حجم النص */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+  }
+  .help-btn a {
     text-decoration: none;
-    
-}
-.menu_opi .container a{
-    width: 390px; /* ضبط عرض الحاوية */
-    margin: 0 ; /* مركزها أفقيا*/
-    background-color:  #e7ae4b ; /*أضف لون الخلفية لرؤية الحاوية*/
-    padding: 10px; /*أضف بعض الفراغ لجعله يبدو أجمل*/
-    border-radius: 8%; /*علشان نخليه بدل مربع دائره يدي مظهر جميل*/
-    display: flex;
-    list-style: none;
-    color: #123;
-    text-decoration: none;
-
-}
-
-
-@media only screen and (max-width: 3000px) {
-    /* Styles for desktop screens */
-    .menu {
-      width: 150px;
-      height: 100vh;
+    color: #fff; /* تغيير اللون ليظهر بشكل واضح */
+  }
+  .help-btn:hover {
+    background-color: #fb8c00;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* تصميم متجاوب للشاشات الصغيرة */
+  @media (max-width: 768px) {
+    .tool {
+      width: 100px; /* تقليل العرض للشاشات الصغيرة */
+      height: 115px; /* ضبط الارتفاع للشاشات الصغيرة */
     }
-    .container{
-        width: 350px; /* ضبط عرض الحاوية */
-        margin: 50px; /* increase the margin to 30px for larger screens */
-        background-color:  #e7ae4b ; /*أضف لون الخلفية لرؤية الحاوية*/
-        padding: 6px; /*أضف بعض الفراغ لجعله يبدو أجمل*/
-        border-radius: 8%; /*علشان نخليه بدل مربع دائره يدي مظهر جميل*/
-        display: flex;
-        list-style: none;
-        color: #123;
-        text-decoration: none;
-        
-        
-
+    .tool img {
+      width: 42px; /* زيادة حجم الصورة قليلاً للشاشات الصغيرة */
+      height: 42px;
     }
-    
-    .menu_opi .container a{
-        width: 340px; /* ضبط عرض الحاوية */
-             /* مركزها أفقيا*/
-        background-color:  #e7ae4b ; /*أضف لون الخلفية لرؤية الحاوية*/
-        padding: 6px; /*أضف بعض الفراغ لجعله يبدو أجمل*/
-        border-radius: 8%; /*علشان نخليه بدل مربع دائره يدي مظهر جميل*/
-        display: flex;
-        list-style: none;
-        color: #123;
-        text-decoration: none;
-    
+    .tool p {
+      font-size: 0.7em; /* تقليل حجم النص للشاشات الصغيرة */
     }
-    .menu_opi{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        list-style: none;
-        text-decoration: none;
+  }
+  
+  @media (max-width: 480px) {
+    .tool {
+      width: 85px; /* تقليل أكبر للشاشات الصغيرة جدًا */
+      height: 97px; /* ضبط الارتفاع للشاشات الصغيرة جدًا */
     }
-    
-}
-
-@media only screen and (max-width: 799px) {
-.menu {
-  width: 150px;
-  height: 80vh;
-}
-}
-
-@media only screen and (max-width: 480px) {
-.menu {
-  width: 150px;
-  height: 90vh;
-}
-}
+    .tool img {
+      width: 38px; /* زيادة حجم الصورة قليلاً للشاشات الصغيرة جدًا */
+      height: 38px;
+    }
+    .tool p {
+      font-size: 0.6em; /* تقليل حجم النص للشاشات الصغيرة جدًا */
+    }
+  }
+  
+  /* تصميم متجاوب للشاشات الكبيرة */
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  }
+  
