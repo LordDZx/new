@@ -9,9 +9,45 @@
 
 }
 body{
-    background-color:  #001;
-    display: flex;
+  background-image:url(/img/background\ empire.png)  ;
 }
+
+
+
+.header {
+  display: flex;
+  justify-content: space-around; /* Distribute space evenly between items */
+  align-items: center;
+  background-color: #123; /* Background color of the header */
+  padding: 10px;
+  border-bottom: 2px solid #fff; /* Border to define the bottom edge */
+}
+
+.header a {
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center;
+  text-decoration: none;
+  color: white; /* Text color */
+}
+
+.header img {
+  width: 40px; /* Set a consistent width for images */
+  height: 40px; /* Set a consistent height for images */
+  margin-bottom: 5px; /* Space between image and text */
+}
+
+.header span {
+  font-size: 14px; /* Font size for the text */
+  text-transform: capitalize; /* Capitalize the first letter of each word */
+}
+
+/* Optional hover effect */
+.header a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+  border-radius: 8px; /* Rounded corners on hover */
+}
+
 
 .homesss {
     width: 50px;
