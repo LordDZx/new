@@ -7,18 +7,19 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #333;
+            color: #f4f4f4;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .container {
             text-align: center;
-            background-color: #fff;
+            background-color: #444;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -45,9 +46,41 @@
             width: 40px;
             height: 40px;
         }
+
+        .theme-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .theme-toggle img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .light-mode {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .light-mode .container {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .light-mode h1 {
+            color: #e74c3c;
+        }
     </style>
 </head>
 <body>
+    <button class="theme-toggle" id="theme-toggle">
+        <img src="/img/moon.png" alt="تبديل الوضع">
+    </button>
     <div class="container">
         <h1>تم إيقاف الموقع</h1>
         <p>نود أن نعلمكم أن الموقع قد تم إيقافه بسبب اعتزال اللعبة وبرمجة مواقع اللعبة.</p>
@@ -61,5 +94,33 @@
             </a>
         </div>
     </div>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const darkModeClass = 'dark-mode';
+        const lightModeClass = 'light-mode';
+
+        // Check for saved theme in localStorage or use dark mode by default
+        if (localStorage.getItem('theme') === darkModeClass) {
+            document.body.classList.add(darkModeClass);
+            themeToggle.querySelector('img').src = '/img/sun.png';
+        } else {
+            document.body.classList.add(lightModeClass);
+            themeToggle.querySelector('img').src = '/img/moon.png';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDarkMode = document.body.classList.contains(darkModeClass);
+
+            if (isDarkMode) {
+                document.body.classList.replace(darkModeClass, lightModeClass);
+                themeToggle.querySelector('img').src = '/img/moon.png';
+                localStorage.setItem('theme', lightModeClass);
+            } else {
+                document.body.classList.replace(lightModeClass, darkModeClass);
+                themeToggle.querySelector('img').src = '/img/sun.png';
+                localStorage.setItem('theme', darkModeClass);
+            }
+        });
+    </script>
 </body>
 </html>
