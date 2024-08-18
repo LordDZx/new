@@ -54,12 +54,19 @@
             background: none;
             border: none;
             cursor: pointer;
-            font-size: 20px;
+            display: flex;
+            align-items: center;
         }
 
         .theme-toggle img {
             width: 30px;
             height: 30px;
+        }
+
+        .theme-label {
+            margin-left: 10px;
+            font-size: 16px;
+            color: #fff;
         }
 
         .light-mode {
@@ -80,6 +87,7 @@
 <body>
     <button class="theme-toggle" id="theme-toggle">
         <img src="/img/moon.png" alt="تبديل الوضع">
+        <span class="theme-label" id="theme-label">الوضع الليلي</span>
     </button>
     <div class="container">
         <h1>تم إيقاف الموقع</h1>
@@ -96,16 +104,24 @@
     </div>
     <script>
         const themeToggle = document.getElementById('theme-toggle');
+        const themeLabel = document.getElementById('theme-label');
         const darkModeClass = 'dark-mode';
         const lightModeClass = 'light-mode';
 
-        // Check for saved theme in localStorage or use dark mode by default
+        // Set default theme to dark mode
+        document.body.classList.add(darkModeClass);
+        themeToggle.querySelector('img').src = '/img/sun.png';
+        themeLabel.textContent = 'الوضع النهاري';
+
+        // Check for saved theme in localStorage
         if (localStorage.getItem('theme') === darkModeClass) {
             document.body.classList.add(darkModeClass);
             themeToggle.querySelector('img').src = '/img/sun.png';
-        } else {
+            themeLabel.textContent = 'الوضع النهاري';
+        } else if (localStorage.getItem('theme') === lightModeClass) {
             document.body.classList.add(lightModeClass);
             themeToggle.querySelector('img').src = '/img/moon.png';
+            themeLabel.textContent = 'الوضع الليلي';
         }
 
         themeToggle.addEventListener('click', () => {
@@ -114,10 +130,12 @@
             if (isDarkMode) {
                 document.body.classList.replace(darkModeClass, lightModeClass);
                 themeToggle.querySelector('img').src = '/img/moon.png';
+                themeLabel.textContent = 'الوضع الليلي';
                 localStorage.setItem('theme', lightModeClass);
             } else {
                 document.body.classList.replace(lightModeClass, darkModeClass);
                 themeToggle.querySelector('img').src = '/img/sun.png';
+                themeLabel.textContent = 'الوضع النهاري';
                 localStorage.setItem('theme', darkModeClass);
             }
         });
