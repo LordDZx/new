@@ -115,13 +115,13 @@
         const darkModeClass = 'dark-mode';
         const lightModeClass = 'light-mode';
 
-        // Set default theme to dark mode
-        document.body.classList.add(darkModeClass);
-        themeToggle.querySelector('img').src = '/img/sun.png';
-        themeLabel.textContent = 'الوضع النهاري';
-
-        // Check for saved theme in localStorage
-        if (localStorage.getItem('theme') === darkModeClass) {
+        // Set default theme to dark mode if no theme is saved in localStorage
+        if (!localStorage.getItem('theme')) {
+            document.body.classList.add(darkModeClass);
+            themeToggle.querySelector('img').src = '/img/sun.png';
+            themeLabel.textContent = 'الوضع النهاري';
+            localStorage.setItem('theme', darkModeClass); // Save dark mode as default
+        } else if (localStorage.getItem('theme') === darkModeClass) {
             document.body.classList.add(darkModeClass);
             themeToggle.querySelector('img').src = '/img/sun.png';
             themeLabel.textContent = 'الوضع النهاري';
