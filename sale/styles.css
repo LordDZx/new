@@ -32,6 +32,30 @@ header {
     margin-bottom: 30px;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    position: relative;
+}
+
+.return-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #444;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.return-home a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.return-home:hover {
+    background-color: #666;
+    transform: scale(1.05);
 }
 
 header nav {
