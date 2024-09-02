@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const body = document.body;
 
     // Load theme from localStorage
-    const currentTheme = localStorage.getItem('theme') || 'dark-mode';
+    const currentTheme = localStorage.getItem('theme') || 'light-mode';
     body.classList.add(currentTheme);
 
     if (currentTheme === 'dark-mode') {
