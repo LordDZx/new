@@ -1,0 +1,95 @@
+*{    cursor: url('/img/mouse1.png'), auto;
+}
+
+body {
+  background-image: url('backg4.jfif');
+  color: #433120;
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  z-index: 1;
+  position: relative;
+
+}
+.container .box {
+  margin-top: 60%;
+  text-align: center;
+  transition: transform 0.3s ease;
+  align-items: center;
+  background-color: #2F4F7F;
+  color: #EAD0B2;
+  font-weight: bolder;
+  border: thick solid #0c0e0f;
+  min-height: 250px;
+  border-radius: 12px;
+}
+
+@media screen and (max-width: 1024px) {
+  .container .box {
+      margin-top: 10%;
+      margin-bottom: 5%;
+      margin-left: 15px;
+      margin-right: 15px;
+  }
+}
+
+@media screen and (min-width: 724px) {
+  .container .box:hover {
+      transform: scale(1.1);
+  }
+}
+
+/*@media only screen and (max-width: 700px) {
+  #overlay {
+      background-color: rgba(0, 0, 0, 0);
+  }
+  body{
+        background-image: none;
+        background-color: #bd9a79;
+        margin: 0 !important;
+      }
+}
+      تم ايقافها من قبل اللورد*/
+@media screen and (min-width: 700px) {
+  .container .box:hover {
+      transform: scale(1.1);
+  }
+}
+
+
+nav {
+  background-color: #03565c;
+  color: #F3C24A;
+  padding: 10px;
+  z-index: 1;
+  position: relative;
+}
+
+h2,
+h1 {
+  font-weight: bolder;
+  text-align: center;
+}
+.container a:hover {
+  text-decoration: none;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+.container img {
+  max-height: 120px;
+  min-height: 120px;
+  max-width: auto;
+  margin-top: 2%
+}

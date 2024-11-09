@@ -1,0 +1,239 @@
+/* Custom cursor */
+* {
+    cursor: url('/img/mouse1.png'), auto;
+}
+
+/* Reset default styles */
+body, h1, h2, p, ul, li, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure the body takes full height and uses flexbox */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Basic styling for body */
+body {
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+/* Light mode styles */
+body.light-mode {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1em 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+header.light-mode {
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Container to center content and align theme switcher */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* Header content styling */
+.header-content {
+    text-align: center;
+    flex: 1; /* Allow this to take up remaining space */
+}
+
+.header-content h1 {
+    margin-bottom: 0.5em;
+    font-size: 2em;
+    transition: color 0.3s ease;
+}
+
+.header-content p {
+    font-size: 1.2em;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* Theme switch section */
+.theme-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#themeLabel {
+    font-size: 1em;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.header-button {
+    width: 50px;
+    height: 50px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Button styles for light mode */
+.header-button.light-mode {
+    background-image: url('/img/sun.png'); /* Replace with your sun icon path */
+}
+
+/* Button styles for dark mode */
+.header-button.dark-mode {
+    background-image: url('/img/moon.png'); /* Replace with your moon icon path */
+}
+
+/* Button hover effect */
+.header-button:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Main content styling */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+.message-box {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.message-box h2 {
+    color: #4CAF50;
+    margin-bottom: 0.5em;
+    font-size: 2em;
+    transition: color 0.3s ease;
+}
+
+.message-box p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+    transition: color 0.3s ease;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer styling */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+footer.light-mode {
+    background: #f4f4f4;
+    color: #333;
+}
+
+footer.dark-mode {
+    background: #333;
+    color: #f4f4f4;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .theme-switch {
+        position: static;
+        margin-top: 1em;
+    }
+
+    .header-content {
+        text-align: center;
+        padding: 0 10px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    main h2 {
+        font-size: 1.5em;
+    }
+
+    main p {
+        font-size: 1em;
+    }
+
+    button {
+        font-size: 0.9em;
+    }
+
+    .header-button {
+        width: 40px;
+        height: 40px;
+    }
+}

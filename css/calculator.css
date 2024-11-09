@@ -1,0 +1,187 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+    cursor: url('/img/mouse1.png'), auto;
+
+
+}
+body{
+    background-color: #001;
+    display: flex;
+    margin-left: 240px; /* add this line */
+}
+
+.homesss {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgb(255, 0, 0);
+    flex-shrink: 0;
+}
+.homesss img{
+    width: 100%;
+}
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.profile h2{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #123;
+    width: 200px;
+    height: 100vh;
+    padding: 20px;
+    overflow-y: auto;
+    transition: .5s;
+    z-index: 1000;
+    }
+ul{
+    list-style: none;
+    position: relative;
+    height: 95%;
+}
+ul li a{
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+ul li a:hover, .smarts {
+    background-color: #ffffff55;
+    border-radius: 8%;
+
+}
+
+.yout1{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+.yout1 a{
+    background-color: #a00;
+    
+}
+ul li a i{
+    font-size: 30px;
+    text-decoration: none;
+
+}
+.menu_opi{
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    margin: 30px 10px;
+    flex-wrap: wrap;
+    list-style: none;
+    text-decoration: none;
+
+}
+.container  {
+    width: 450px; /* ضبط عرض الحاوية */
+    margin: 0 ; /* مركزها أفقيا*/
+    background-color:  #e7ae4b ; /*أضف لون الخلفية لرؤية الحاوية*/
+    padding: 10px; /*أضف بعض الفراغ لجعله يبدو أجمل*/
+    border-radius: 8%; /*علشان نخليه بدل مربع دائره يدي مظهر جميل*/
+    display: flex;
+    list-style: none;
+    color: #123;
+    text-decoration: none;
+}
+.container :hover{
+    color: #123;
+}
+.menu_opi .container a{
+    width: 450px; /* ضبط عرض الحاوية */
+    margin: 0 ; /* مركزها أفقيا*/
+    background-color:  #e7ae4b ; /*أضف لون الخلفية لرؤية الحاوية*/
+    padding: 10px; /*أضف بعض الفراغ لجعله يبدو أجمل*/
+    border-radius: 8%; /*علشان نخليه بدل مربع دائره يدي مظهر جميل*/
+    display: flex;
+    list-style: none;
+    color: #123;
+    text-decoration: none;
+
+}
+/* Media queries */
+@media only screen and (max-width: 3000px) {
+    /* Styles for desktop screens */
+    .menu {
+      width: 150px;
+      height: 100vh;
+    }
+    .container{
+        width: 400px; /* ضبط عرض الحاوية */
+        margin: 20px; /* add this line to add a 20px margin between each container */
+        background-color:  #e7ae4b ; /*أضف لون الخلفية لرؤية الحاوية*/
+        padding: 6px; /*أضف بعض الفراغ لجعله يبدو أجمل*/
+        border-radius: 8%; /*علشان نخليه بدل مربع دائره يدي مظهر جميل*/
+        display: flex;
+        list-style: none;
+        color: #123;
+        text-decoration: none;
+        
+
+    }
+    .menu_opi{
+        width: 100%;
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        list-style: none;
+        text-decoration: none;
+        
+    }
+    .menu_opi .container a{
+        width: 390px; /* ضبط عرض الحاوية */
+        margin: 0 ; /* مركزها أفقيا*/
+        background-color:  #e7ae4b ; /*أضف لون الخلفية لرؤية الحاوية*/
+        padding: 10px; /*أضف بعض الفراغ لجعله يبدو أجمل*/
+        border-radius: 8%; /*علشان نخليه بدل مربع دائره يدي مظهر جميل*/
+        display: flex;
+        list-style: none;
+        color: #123;
+        text-decoration: none;
+    
+    }
+    
+}
+  
+
+  @media only screen and (max-width: 768px) {
+    .menu {
+      width: 150px;
+      height: 80vh;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .menu {
+      width: 150px;
+      height: 90vh;
+    }
+  }
+  
