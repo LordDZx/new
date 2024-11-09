@@ -1,0 +1,285 @@
+body, html {
+    background: linear-gradient(135deg, #3a3a3a, #1a1a1a); /* Dark grey gradient for a strategic feel */
+
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: 'Times New Roman', Times, serif !important;
+}
+
+#content {
+    margin: auto 0;
+    margin-inline: 0 2vw;
+    display: flex;
+    width: 98vw;
+}
+
+#languages {
+    display: block;
+    text-align: center;
+    margin: 0.83em auto;
+}
+
+#servers, #events {
+    text-align: center;
+    font-weight: bold;
+}
+
+#servers, #events, #alliance_toggle {
+    display: block;
+    margin: 0.3em auto;
+}
+
+#alliance_toggle {
+    width: fit-content;
+    border-radius: 0.3em;
+    overflow: hidden;
+    background-color: #4a90e2; /* Sky blue background for toggle container */
+}
+
+#alliance_toggle button {
+    font-size: 0.9em;
+    padding: 0.5em 1em;
+    margin: 0;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    border-radius: 0.3em;
+    background-color: #007aff; /* Blue background */
+    color: #ffffff; /* White text */
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+#alliance_toggle button:hover {
+    background-color: #005bb5; /* Darker blue for hover */
+}
+
+#alliance_toggle button.active {
+    background-color: #2e8b57; /* Green for active state */
+    color: #ffffff;
+}
+
+#servers {
+    font-size: 1.5em;
+}
+
+#events {
+    font-size: 1.2em;
+}
+
+#navigate_buttons {
+    min-width: 2.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#navigate_buttons button {
+    margin: 0.2em 0;
+    background-color: #007aff; /* Blue background for buttons */
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+    color: #ffffff; /* White text */
+}
+
+#navigate_buttons button:hover {
+    background-color: #005bb5; /* Darker blue for hover */
+}
+
+#navigate_buttons button:nth-child(3) {
+    margin-top: auto;
+}
+
+#table {
+    flex-grow: 1;
+    table-layout: fixed;
+    width: 100%;
+    margin: auto;
+    color: #333333; /* Dark grey text color */
+    background-color: #f0f4f8; /* Light grey background */
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    border-radius: 1em;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#table tr {
+    border-bottom: 1px solid #e0e0e0; /* Light grey border for rows */
+}
+
+#table tr:hover {
+    background-color: #e6f7ff; /* Light blue hover background color */
+}
+
+#table th, #table td {
+    word-break: break-word;
+}
+
+#table th {
+    padding: 0.5em 0.2em;
+    background-color: #005bb5; /* Dark blue background for headers */
+    color: #ffffff; /* White text color for headers */
+}
+
+#table col {
+    width: 150%;
+}
+
+#table col.small_column {
+    width: 100%;
+}
+
+#table tfoot tr {
+    border-bottom: none;
+}
+
+#table td {
+    padding: 0.3em 0.1em;
+}
+
+.title img {
+    vertical-align: middle;
+    height: 1.5em;
+}
+
+.members p, .members img {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.members p {
+    margin-inline-end: 0.5em;
+}
+
+.members a {
+    cursor: pointer;
+}
+
+.player_name p {
+    margin: 0;
+}
+
+.medal div {
+    display: inline-block;
+    margin: 0 0.2em;
+}
+
+.medal div:first-child {
+    margin-inline-start: 0;
+}
+
+.medal div:last-child {
+    margin-inline-end: 0;
+}
+
+.medal p, .medal img {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+}
+
+#category div, #search div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#category p {
+    margin: 0 0.5em;
+    width: 13em;
+}
+
+#search input {
+    margin: 0 1em;
+    width: 17em;
+    text-align: center;
+    border-radius: 0.3em;
+    padding: 0.5em;
+    border: 1px solid #007aff; /* Blue border */
+    background-color: #ffffff;
+}
+
+#search input:hover {
+    border-color: #005bb5; /* Darker blue border on hover */
+}
+
+#navigate button, #table button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.7em;
+    background-color: #007aff; /* Blue background for buttons */
+    border: none;
+    border-radius: 0.3em;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+    color: #ffffff; /* White text */
+}
+
+#navigate button:hover, #table button:hover {
+    background-color: #005bb5; /* Darker blue background on hover */
+}
+
+td img, button img {
+    height: 1em;
+    margin: auto;
+}
+
+.leftArrow {
+    transform: rotate(-90deg);
+}
+
+.rightArrow {
+    transform: rotate(90deg);
+}
+
+.header_div {
+    position: relative;
+}
+
+.downloadIcon {
+    position: absolute;
+    right: 0.5em;
+    background: none;
+    border: none;
+}
+
+#table tbody td {
+    height: 1.5em;
+}
+
+select {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background for select element */
+    border: 1px solid #e06c75; /* Border matching gradient colors */
+    border-radius: 0.3em;
+    padding: 0.5em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+select:hover, select:focus {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f); /* Reverse gradient on hover/focus */
+    border-color: #e06c75; /* Border matching gradient colors */
+    box-shadow: 0 0 0.5em rgba(255, 105, 97, 0.5); /* Soft shadow on hover/focus */
+}
+
+select option {
+    background-color: #ffffff; /* Background color for options */
+    color: #333333; /* Text color for options */
+}
+
+@media all and (orientation: portrait) {
+    #table {
+        font-size: 0.8em;
+    }
+    
+    #table tbody td {
+        height: 2.25em;
+    }
+}
