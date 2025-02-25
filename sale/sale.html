@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب بيع وشراء حسابات gge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode">
+    <header>
+        <h1>طلب بيع وشراء حسابات gge</h1>
+        <div class="disclaimer">
+            هذا الموقع تحت إشراف EL-Lord لا يوجد أي وسيط للموقع الشراء والبيع فقط بالتواصل مع صاحب الحساب ليس لنا أي علاقة بأي عملات فاشلة أو سرقة واحتيال.
+            <br>لعرض حسابك للبيع او عرض طلب شراء تواصل مع صاحب الموقع Hardluck     
+        </div>
+        <button id="theme-toggle">
+            <img id="theme-icon" src="Sun.png" class="theme-icon" alt="Theme Icon">
+            <span id="theme-name">الوضع النهاري</span>
+        </button>
+        <button class="return-home">
+            <a href="https://empire-wiki.netlify.app/">العودة للرئيسية</a>
+        </button>
+    
+    </header>
+    <div class="accounts-container">
+        <div class="account-card" id="account-1">
+            <img src="account1-main.jpg" alt="صوره الحساب" class="main-image" onclick="openGallery(1, 0)">
+            <div class="image-thumbnails">
+                <img src="account1-thumb1.jpg" alt="تفاصيل الحساب 1" onclick="openGallery(1, 0)">
+                <img src="account1-thumb2.jpg" alt="تفاصيل الحساب 2" onclick="openGallery(1, 1)">
+                <img src="account1-thumb3.jpg" alt="تفاصيل الحساب 3" onclick="openGallery(1, 2)">
+            </div>
+            <div class="account-details">
+                <h2>حساب 1</h2>
+                <p>سعر: $</p>
+                <p><a href="#">تواصل مع صاحب الحساب Facebook</a></p>
+            </div>
+        </div>
+        <!-- يمكنك إضافة المزيد من الحسابات هنا -->
+    </div>
+    <div id="image-gallery">
+        <span class="close" onclick="closeGallery()">&times;</span>
+        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+        <img id="gallery-image" class="gallery-image" src="" alt="Gallery Image">
+        <span class="next" onclick="changeImage(1)">&#10095;</span>
+    </div>
+    <footer>
+        <p>للتواصل عبر واتساب مع صاحب الموقع !: <a href="https://api.whatsapp.com/send/?phone=201098662418">Whatsapp</a></p>
+        <p>للتواصل عبر الفيسبوك مع صاحب الموقع !: <a href="https://www.facebook.com/profile.php?id=61558933496823">Facebook</a></p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="../dev-block.js"></script>
+
+</body>
+</html>

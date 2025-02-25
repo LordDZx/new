@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="leg-sim.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> empire-wiki</title>
+    <link rel="icon" type="image/png" href="event.png"/>
+</head>
+<body>
+    <header class="header">
+        <a href="https://empire-wiki.netlify.app/">
+            <img src="/img/home.jpg" alt="الرئيسية">
+            <span>الرئيسية</span>
+        </a>
+        <a href="https://empire-wiki.netlify.app/smart-cal">
+            <img src="/img/smart-cal.png" alt="حاسبة ذكية">
+            <span>حاسبة ذكية</span>
+        </a>
+        <a href="https://empire-wiki.netlify.app/calculator">
+            <img src="/img/smart.png" alt="حاسبة التكلفة والإنتاج">
+            <span>حاسبة التكلفة والإنتاج</span>
+        </a>
+        <a href="#">
+            <img src="/img/event.png" alt="الأحداث">
+            <span>الأحداث</span>
+        </a>
+        <a href="#">
+            <img src="/img/tipss.png" alt="نصائح">
+            <span>نصائح</span>
+        </a>
+        <a href="#">
+            <img src="/img/war.png" alt="حرب">
+            <span>حرب</span>
+        </a>
+    </header>
+
+
+<main>
+    <section class="section-guide">
+        <label for="pgge-po"><p class="u-no-ver-margin">اكتب كم نقاط النظام العام التي تمتلكها:</p></label><br>
+        <input onkeyup="calculate()" id="pgge-po" type="number" placeholder="مثال 700000" style="width: 160px;"><br>
+        <p>سيمنح المقدار المحدد من النظام العام المكافأة التالية:</p>
+        <h3 id="result" style="font-size: 5rem;"></h3>
+        
+
+
+            
+<script>
+    var numPO = document.getElementById("pgge-po");
+            var lblResult = document.getElementById("result");           
+
+            /* function */
+            function calculate(){
+                PO = numPO.value;
+                POmax = 400000;                
+
+                if (PO > POmax){
+                    numPO.value = POmax;
+                }
+
+                if (PO > 0) {
+                    PObonus = Math.sqrt(parseInt(PO))*2+100;
+                }
+                else{
+                    PObonus = 100*(100/(100+2*Math.sqrt(-PO)))
+                }
+                
+
+                lblResult.innerHTML = Math.round(PObonus) + "%";
+            }
+</script>
+</main>
+<script src="../dev-block.js"></script>
+
+</body>
+</html>

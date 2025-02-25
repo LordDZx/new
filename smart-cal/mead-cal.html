@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="mead-cal.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> empire-wiki</title>
+    <link rel="icon" type="image/png" href="event.png"/>
+</head>
+<body>
+    <header class="header">
+        <a href="https://empire-wiki.netlify.app/">
+            <img src="/img/home.jpg" alt="الرئيسية">
+            <span>الرئيسية</span>
+        </a>
+        <a href="https://empire-wiki.netlify.app/smart-cal">
+            <img src="/img/smart-cal.png" alt="حاسبة ذكية">
+            <span>حاسبة ذكية</span>
+        </a>
+        <a href="https://empire-wiki.netlify.app/calculator">
+            <img src="/img/smart.png" alt="حاسبة التكلفة والإنتاج">
+            <span>حاسبة التكلفة والإنتاج</span>
+        </a>
+        <a href="#">
+            <img src="/img/event.png" alt="الأحداث">
+            <span>الأحداث</span>
+        </a>
+        <a href="#">
+            <img src="/img/tipss.png" alt="نصائح">
+            <span>نصائح</span>
+        </a>
+        <a href="#">
+            <img src="/img/war.png" alt="حرب">
+            <span>حرب</span>
+        </a>
+    </header>
+
+
+
+    <main>
+        <section class="section-guide" style="padding-left: 1%; padding-right: 1%;">
+    
+            <div class="brewery">
+                <div class="brewery-heading">
+                    <div class="brewery-title">
+                        <p>مصنع العسل</p>
+                    </div>
+                </div>
+    
+                <div class="brewery-bonuses">
+                    <div class="brewery-bonuses-title">
+                        <p class="il">معدل الانتاج (الـعـسل):</p>
+                        <p class="il" id="hideHoney" onclick="HideHoney()" style="float: right; text-decoration: underline; cursor: pointer;">أخفاء</p>
+                    </div>
+                    <form class="brewery-bonuses-form row row-cols-1 row-cols-lg-2" onchange="Calculate()" id="honeyForm" onsubmit="return false;">
+                        <div class="col">     
+                            <select name="apiaryAmount" id="apiaryAmount" onchange="Calculate()">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                            <label for="apiaryAmount">عدد المناحل</label>
+                            <br>                   
+                            <select name="apiaryLvl" id="apiaryLvl" onchange="Calculate()">
+                                <option value="250">1</option>
+                                <option value="275">2</option>
+                                <option value="300">3</option>
+                                <option value="325">4</option>
+                                <option value="350">5</option>
+                                <option value="375">6</option>
+                                <option value="400">7</option>
+                                <option value="425">8</option>
+                                <option value="450">9</option>
+                                <option value="475">10</option>
+                                <option value="500">11</option>
+                                <option value="525">12</option>
+                                <option value="550">13</option>
+                                <option value="575">14</option>
+                                <option value="600">15</option>
+                            </select>
+                            <label for="apiaryLvl">مستوي المناحل</label>
+                            <br>
+                            <input type="number" value="0" id="Apo" onkeyup="APOchange()">
+                            <label for="Apo">النظام العام</label>
+                            <br>                    
+                            <select name="Aoverseer" id="Aoverseer">
+                                <option value="0">لا</option>
+                                <option value="0.25">نعم</option>
+                            </select>
+                            <label for="Aoverseer">مراقب انتاج العسل</label>
+                            <br>                    
+                            <select name="Aresearch" id="Aresearch">
+                                <option value="0">لا</option>
+                                <option value="0.04">مستوي 1</option>
+                                <option value="0.08">مستوي 2</option>
+                                <option value="0.12">مستوي 3</option>
+                                <option value="0.16">مستوي 4</option>
+                                <option value="0.20">مستوي 5</option>
+                            </select>
+                            <label for="Aresearch">أبحاث اواني العسل</label>
+                        </div>                    
+                        <div class="col">
+                            <select name="Agardens" id="Agardens">
+                                <option value="0">لا</option>
+                                <option value="0.1">مستوي 1</option>
+                                <option value="0.2">مستوي 2</option>
+                                <option value="0.3">مستوي 3</option>
+                                <option value="0.4">مستوي 4</option>
+                                <option value="0.5">مستوي 5</option>
+                                <option value="0.6">مستوي 6</option>
+                            </select>
+                            <label for="Agardens">حدائق العسل</label>
+                            <br>
+                            <select name="Acoat" id="Acoat">
+                                <option value="0">0%</option>
+                                <option value="0.02">2%</option>
+                                <option value="0.04">4%</option>
+                                <option value="0.08">8%</option>
+                                <option value="0.11">11%</option>
+                                <option value="0.15">15%</option>
+                                <option value="0.16">16%</option>
+                                <option value="0.20">20%</option>
+                                <option value="0.22">22%</option>
+                                <option value="0.30">30%</option>
+                                <option value="0.40">40%</option>
+                            </select>
+                            <label for="Acoat">شعار النباله</label>
+                            <br> 
+                            <select name="AstormsTitle" id="AstormsTitle">
+                                <option value="0">لا</option>
+                                <option value="0.25">سيد الخليه</option>
+                            </select>
+                            <label for="AstormsTitle">لقب العواصف</label> 
+                            <br>                    
+                            <select name="AbaseElem" id="AbaseElem">
+                                <option value="0">لا</option>
+                                <option value="30">مستوي 1</option>
+                                <option value="40">مستوي 2</option>
+                                <option value="50">مستوي 3</option>
+                                <option value="60">مستوي 4</option>
+                                <option value="70">مستوي 5</option>
+                                <option value="80">مستوي 6</option>
+                                <option value="90">مستوي 7</option>
+                                <option value="100">مستوي 8</option>
+                                <option value="114">مستوي 9</option>
+                                <option value="130">مستوي 10</option>
+                                <option value="146">مستوي 11</option>
+                                <option value="162">مستوي 12</option>
+                                <option value="180">مستوي 13</option>
+                                <option value="198">مستوي 14</option>
+                                <option value="216">مستوي 15</option>
+                                <option value="236">مستوي 16</option>
+                                <option value="256">مستوي 17</option>
+                                <option value="276">مستوي 18</option>
+                                <option value="296">مستوي 19</option>
+                                <option value="316">مستوي 20</option>
+                                <option value="336">مستوي 21</option>
+                                <option value="356">مستوي 22</option>
+                                <option value="376">مستوي 23</option>
+                                <option value="396">مستوي 24</option>
+                                <option value="418">مستوي 25</option>
+                            </select>
+                            <label for="AbaseElem">عنصر بنيه اساسي</label>
+                            <br>                   
+                            <select name="ArelicElem" id="ArelicElem">
+                                <option value="0">لا</option>
+                                <option value="2200">مستوي 1</option>
+                                <option value="2400">مستوي 2</option>
+                                <option value="2600">مستوي 3</option>
+                                <option value="2800">مستوي 4</option>
+                                <option value="3000">مستوي 5</option>
+                                <option value="3200">مستوي 6</option>
+                                <option value="3400">مستوي 7</option>
+                                <option value="3600">مستوي 8</option>
+                                <option value="3800">مستوي 9</option>
+                                <option value="4000">مستوي 10</option>
+                                <option value="4200">مستوي 11</option>
+                                <option value="4400">مستوي 12</option>
+                                <option value="4600">مستوي 13</option>
+                                <option value="4800">مستوي 14</option>
+                                <option value="5000">مستوي 15</option>
+                                <option value="5200">مستوي 16</option>
+                                <option value="5400">مستوي 17</option>
+                                <option value="5600">مستوي 18</option>
+                                <option value="5800">مستوي 19</option>
+                                <option value="6000">مستوي 20</option>
+                                <option value="6100">مستوي 21</option>
+                                <option value="6200">مستوي 22</option>
+                                <option value="6300">مستوي 23</option>
+                                <option value="6400">مستوي 24</option>
+                                <option value="6500">مستوي 25</option>
+                                <option value="6600">مستوي 26</option>
+                                <option value="6700">مستوي 27</option>
+                                <option value="6800">مستوي 28</option>
+                                <option value="6900">مستوي 29</option>
+                                <option value="7000">مستوي 30</option>
+
+                            </select>
+                            <label for="ArelicElem">عنصر بنيه أثري</label>
+                        </div>
+                    </form>
+                </div>
+    
+                <div class="brewery-production" style="margin: 0;" id="honeySum">
+                    <div class="brewery-production-calculator" style="padding: 0;">
+                        <div class="brewery-production-calculator-sum" id="sum-box" style="clip-path: none; width: 100%;">
+                            <nobr style=" margin: 0 auto; display: table;"><img src="honey.png"><p id="honeyProd">0</p></nobr>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="brewery-bonuses">
+                    <div class="brewery-bonuses-title">
+                        <p>معدل انتاج الشراب</p>
+                    </div>
+                    <form class="brewery-bonuses-form row row-cols-1 row-cols-lg-2" onchange="Calculate()" onsubmit="return false;">
+                        <div class="col">                        
+                            <select name="breweryLvl" id="breweryLvl" onchange="Calculate()">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+
+
+                            </select>
+                            <label for="breweryLvl">مستوي المصنع</label>
+                            <br>
+                            <input type="number" value="0" id="po" onkeyup="POchange()">
+                            <label for="po">النظام العام</label>
+                            <br>                    
+                            <select name="overseer" id="overseer">
+                                <option value="0">لا</option>
+                                <option value="0.25">نعم</option>
+                            </select>
+                            <label for="overseer">مراقب انتاج الشراب؟</label>
+                            <br>                    
+                            <select name="research" id="research">
+                                <option value="0">لا</option>
+                                <option value="0.04">مستوي 1</option>
+                                <option value="0.08">مستوي 2</option>
+                                <option value="0.12">مستوي 3</option>
+                                <option value="0.16">مستوي 4</option>
+                                <option value="0.20">مستوي 5</option>
+                            </select>
+                            <label for="research">بحث أبارييق الشماليين</label>
+                            <br>
+                            <select name="barrel" id="barrel">
+                                <option value="0">لا</option>
+                                <option value="0.1">مستوي 1</option>
+                                <option value="0.2">مستوي 2</option>
+                                <option value="0.3">مستوي 3</option>
+                                <option value="0.4">مستوي 4</option>
+                                <option value="0.5">مستوي 5</option>
+                                <option value="0.6">مستوي 6</option>
+                            </select>
+                            <label for="barrel">ورشه البراميل</label>
+                        </div>                    
+                        <div class="col">
+                            
+                            <br>
+                            <select name="coat" id="coat">
+                                <option value="0">0%</option>
+                                <option value="0.02">2%</option>
+                                <option value="0.04">4%</option>
+                                <option value="0.08">8%</option>
+                                <option value="0.11">11%</option>
+                                <option value="0.15">15%</option>
+                                <option value="0.16">16%</option>
+                                <option value="0.20">20%</option>
+                                <option value="0.22">22%</option>
+                                <option value="0.30">30%</option>
+                                <option value="0.40">40%</option>
+                            </select>
+                            <label for="coat">شعار النباله</label>
+                            <br> 
+                            <select name="stormsTitle" id="stormsTitle">
+                                <option value="0">لا</option>
+                                <option value="0.25">النهم</option>
+                            </select>
+                            <label for="stormsTitle">لقب العواصف</label>     
+                            <br>              
+                            <select name="baseElem" id="baseElem">
+                                <option value="0">لا</option>
+                                <option value="70">مستوي 1</option>
+                                <option value="90">مستوي 2</option>
+                                <option value="110">مستوي 3</option>
+                                <option value="130">مستوي 4</option>
+                                <option value="150">مستوي 5</option>
+                                <option value="170">مستوي 6</option>
+                                <option value="190">مستوي 7</option>
+                                <option value="250">مستوي 8</option>
+                                <option value="300">مستوي 9</option>
+                                <option value="350">مستوي 10</option>
+                                <option value="400">مستوي 11</option>
+                                <option value="450">مستوي 12</option>
+                                <option value="500">مستوي 13</option>
+                                <option value="550">مستوي 14</option>
+                                <option value="600">مستوي 15</option>
+                                <option value="650">مستوي 16</option>
+                                <option value="700">مستوي 17</option>
+                                <option value="750">مستوي 18</option>
+                                <option value="800">مستوي 19</option>
+                                <option value="850">مستوي 20</option>
+                                <option value="900">مستوي 21</option>
+                                <option value="1000">مستوي 22</option>
+                                <option value="1100">مستوي 23</option>
+                                <option value="1200">مستوي 24</option>
+                                <option value="1350">مستوي 25</option>
+                            </select> 
+                            <label for="baseElem">عنصر بنيه اساسي</label>
+                            <br>                   
+                            <select name="relicElem" id="relicElem">
+                                <option value="0">لا</option>
+                                <option value="10200">مستوي 1</option>
+                                <option value="10400">مستوي 2</option>
+                                <option value="10600">مستوي 3</option>
+                                <option value="10800">مستوي 4</option>
+                                <option value="11000">مستوي 5</option>
+                                <option value="11200">مستوي 6</option>
+                                <option value="11400">مستوي 7</option>
+                                <option value="11600">مستوي 8</option>
+                                <option value="11800">مستوي 9</option>
+                                <option value="12000">مستوي 10</option>
+                                <option value="12200">مستوي 11</option>
+                                <option value="12400">مستوي 12</option>
+                                <option value="12600">مستوي 13</option>
+                                <option value="12800">مستوي 14</option>
+                                <option value="13000">مستوي 15</option>
+                                <option value="13200">مستوي 16</option>
+                                <option value="13400">مستوي 17</option>
+                                <option value="13600">مستوي 18</option>
+                                <option value="13800">مستوي 19</option>
+                                <option value="14000">مستوي 20</option>
+                                <option value="14100">مستوي 21</option>
+                                <option value="14200">مستوي 22</option>
+                                <option value="14300">مستوي 23</option>
+                                <option value="14400">مستوي 24</option>
+                                <option value="14500">مستوي 25</option>
+                                <option value="14600">مستوي 26</option>
+                                <option value="14700">مستوي 27</option>
+                                <option value="14800">مستوي 28</option>
+                                <option value="14900">مستوي 29</option>
+                                <option value="15000">مستوي 30</option>
+                                
+                            </select>
+                            <label for="relicElem">عنصر بنيه الأثر</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="brewery-production">
+                    <div class="brewery-production-title">
+                        <p>انتاج الشراب:</p>
+                    </div>
+                    <div class="brewery-production-calculator">
+                        <p id="productionOngoing">الإنتاج المستمر </p>
+                        <div class="brewery-production-calculator-sum" id="mead-sum-box">
+                            <nobr><img src="food.png"><p id="food">0</p></nobr>
+                            <img src="plus.png" id="brewery-plus">
+                            <nobr><img src="honey.png">
+                                <div class="container">
+                                    <p id="honey">0</p>
+                                    <p id="honeyDifference"></p>
+                                </div>
+                            </nobr>
+                        </div>
+                        <div class="brewery-production-calculator-result" id="mead-result-box" style="height: 94px;">
+                            <div class="brewery-production-calculator-result-box">
+                                <img src="mead.png"><p id="mead">0</p>
+                            </div>                        
+                        </div>
+                    </div>
+                    <div class="brewery-production-control">
+                        <div class="brewery-production-control-input">
+                            <input type="number" min="0" max="100" value="0" onchange="InputChange(); Calculate()" id="productionInput">
+                        </div>
+                        <div class="brewery-production-control-slider">
+                            <input type="range" min="0" max="100" value="0" step="1" onchange="SliderChange(); Calculate()" oninput="SliderChange(); Calculate()" id="productionSlider">
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div class="brewery-bonuses">
+                    <div class="brewery-bonuses-title">
+                        <p class="il">عدد الجنود التي تستطيع ان تبقي موجوده بهذا الانتاج:</p>
+                        <p class="il" id="hideDist" onclick="HideDist()" style="float: right; text-decoration: underline; cursor: pointer;">HIDE</p>
+                    </div>
+                    <form class="brewery-bonuses-form row row-cols-1 row-cols-lg-2" onchange="Calculate()" id="distForm">
+                        <div class="col">     
+                            <select name="dist" id="dist" onchange="Calculate()">
+                                <option value="0">لا</option>
+                                <option value="0.05">مستوي 1</option>
+                                <option value="0.10">مستوي 2</option>
+                                <option value="0.15">مستوي 3</option>
+                                <option value="0.20">مستوي 4</option>
+                                <option value="0.25">مستوي 5</option>
+                                <option value="0.30">مستوي 6</option>
+                                <option value="0.35">مستوي 7</option>
+                                <option value="0.40">مستوي 8</option>
+                            </select>
+                            <label for="dist">مبني التقطير</label>
+                        </div>   
+                        
+                        <div class="col">
+                            <select name="relicDist" id="relicDist" onchange="Calculate()">
+                                <option value="0">لا</option>
+                                <option value="0.05">مستوي 1</option>
+                                <option value="0.10">مستوي 2</option>
+                                <option value="0.15">مستوي 3</option>
+                                <option value="0.20">مستوي 4</option>
+                                <option value="0.25">مستوي 5</option>
+                            </select>
+                            <label for="relicDist">معمل تقطير الأثر ليست موجوده الا في خوادم الاختبار والخارجيه وليس الاساسي</label>
+                        </div>
+                        
+                    </form>
+                </div>
+    
+                <div class="brewery-production" style="margin: 0;" id="distSum">
+                    <div class="brewery-production-calculator" style="padding: 0;">
+                        <div class="brewery-production-calculator-sum" id="sum-box" style="clip-path: none; width: 100%;">
+                            <nobr style=" margin: 0 auto; display: table;"><img src="/img/unit.png"><p id="unitsHold">0</p></nobr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <script>
+                window.onresize = ResizeElements;
+    
+                input = document.getElementById("productionInput");
+                slider = document.getElementById("productionSlider");      
+                
+                honeyProdLabel = document.getElementById("honeyProd")
+    
+                foodLabel = document.getElementById("food");
+                honeyLabel = document.getElementById("honey");
+                meadLabel = document.getElementById("mead");
+    
+                workload = 0;
+    
+                function InputChange(){
+                    inputValue = document.getElementById("productionInput").value;
+    
+                    if (inputValue >= 0 && inputValue <= 100){
+                        slider.value = inputValue;
+                        workload = inputValue/100;
+                    }
+                    else if (inputValue < 0){
+                        // alert(inputValue)
+                        inputValue = 0;
+                        input.value = 0;
+                        InputChange();
+                    }
+                    else {
+                        inputValue = 100;
+                        input.value = 100;
+                        InputChange();
+                    }
+                }
+    
+                function SliderChange(){
+                    sliderValue = document.getElementById("productionSlider").value;
+    
+                    input.value = sliderValue;
+                    workload = sliderValue/100;
+                }
+    
+                function APOchange(){
+                    Apo = document.getElementById("Apo").value;
+                    document.getElementById("po").value = Apo;
+                }
+    
+                function POchange(){
+                    po = document.getElementById("po").value;
+                    document.getElementById("Apo").value = po;
+                    
+                }
+    
+                baseFood = [25000, 50000, 75000, 125000, 175000, 225000, 275000, 300000, 260000, 300000, 320000, 340000, 360000, 285000, 300000, 315000, 330000, 345000, 360000, 375000, 390000, 405000, 420000, 435000, 450000, 465000, 480000, 495000, 510000, 350000];
+                baseHoney = [15000, 30000, 45000, 75000, 105000, 135000, 110000, 120000, 130000, 150000, 160000, 170000, 180000, 95000, 100000, 105000, 110000, 115000, 120000, 125000, 130000, 135000, 140000, 145000, 150000, 155000, 160000, 165000, 170000, 175000];
+                baseMead = [5000, 10000, 15000, 25000, 35000, 45000, 55000, 60000, 65000, 75000, 80000, 85000, 90000, 95000, 100000, 105000, 110000, 115000, 120000, 125000, 130000, 135000, 140000, 145000, 150000, 155000, 160000, 165000, 170000, 175000];
+    
+                function ResizeElements(){
+                    //keep height of both calculate divs the same to fit chevrons shape
+                    sumDiv = document.getElementById("mead-sum-box");
+                    resultDiv = document.getElementById("mead-result-box");
+    
+                    sumDivHeight = sumDiv.offsetHeight + "px";
+                    resultDiv.style.height = sumDivHeight;
+                }
+    
+                function Calculate(){
+                    //calculate PO bonus
+                    po = document.getElementById("po").value;///
+                    if (po > 0) {
+                        PObonus = Math.sqrt(parseInt(po))*2+100;
+                        PObonus = PObonus/100;
+                    }
+                    else{
+                        PObonus = (100/(100+2*Math.sqrt(-po)))
+                    }
+    
+                    //calculate honey production
+                    //set bonuses variables
+                    apiaryAmount = document.getElementById("apiaryAmount").value;
+                    apiaryLvl = document.getElementById("apiaryLvl").value;
+                    Aoverseer = document.getElementById("Aoverseer").value;
+                    Aresearch = document.getElementById("Aresearch").value;
+                    Agardens = document.getElementById("Agardens").value;
+                    Acoat = document.getElementById("Acoat").value;
+                    AbaseElem = document.getElementById("AbaseElem").value;
+                    ArelicElem = document.getElementById("ArelicElem").value;
+                    AstormsTitle = document.getElementById("AstormsTitle").value;
+    
+                    //calculate base
+                    ApercentBonuses = +Aoverseer + +Aresearch + +Agardens + +Acoat + +AstormsTitle;
+                    BaseHoneyProd = (+apiaryLvl + +AbaseElem) * apiaryAmount;
+    
+                    //calculate final
+                    finalHoney = (BaseHoneyProd * (PObonus * (1+ApercentBonuses))) + +(ArelicElem * apiaryAmount);
+    
+                    honeyProdLabel.innerHTML = Math.round(finalHoney).toLocaleString() + " /hour";
+    
+    
+                    //calculate mead production
+                    //brewery مستوي
+                    selectBreweryLvl = document.getElementById("breweryLvl");
+    
+                    breweryLvl = selectBreweryLvl.value;
+    
+                    //bonuses
+                    overseer = document.getElementById("overseer").value;
+                    research = document.getElementById("research").value;
+                    barrel = document.getElementById("barrel").value;
+                    coat = document.getElementById("coat").value;
+                    baseElem = document.getElementById("baseElem").value;
+                    relicElem = document.getElementById("relicElem").value;    
+                    stormsTitle = document.getElementById("stormsTitle").value;            
+    
+                    percentBonuses = +overseer + +research + +barrel + +coat + +stormsTitle;
+                    baseMeadProd = baseMead[breweryLvl-1] + +baseElem;
+                    
+                    finalMead = workload * (baseMeadProd * (PObonus * (1+percentBonuses))) + +relicElem;                
+    
+                    foodLabel.innerHTML = Math.round(baseFood[breweryLvl-1] * workload).toLocaleString();
+                    honeyLabel.innerHTML = Math.round(baseHoney[breweryLvl-1] * workload).toLocaleString();
+                    meadLabel.innerHTML = Math.round(finalMead).toLocaleString();
+    
+    
+                    //change color of honey label if higher/lower than calculated honey
+                    honeyDifferenceLabel = document.getElementById("honeyDifference");
+                    if (finalHoney != 0 && workload != 0){
+                        honeyDifferenceLabel.style.display = "block";
+                        if (finalHoney > baseHoney[breweryLvl-1] * workload){
+                            honeyDifferenceLabel.style.color = "#004D00";
+                        }
+                        else if (finalHoney < baseHoney[breweryLvl-1] * workload){
+                            honeyDifferenceLabel.style.color = "#D33025";
+                        }
+                        honeyDifference = finalHoney - (baseHoney[breweryLvl-1] * workload)
+                        if (honeyDifference >= 0){
+                            honeyDifferenceLabel.innerHTML = "+" + Math.round(honeyDifference).toLocaleString();
+                        }
+                        else{
+                            honeyDifferenceLabel.innerHTML = Math.round(honeyDifference).toLocaleString();
+                        }
+                    }
+                    else {
+                        honeyDifferenceLabel.style.display = "none";
+                    }
+                    
+                    //calculate amount of units possible to hold
+                    dist = document.getElementById("dist").value;
+                    relicDist = document.getElementById("relicDist").value;
+    
+                    consumptionReduction = +dist + +relicDist;
+                    consumption = 2 * (1-consumptionReduction);
+                    
+                    //set units kept to label
+                    unitsHoldLabel = document.getElementById("unitsHold")
+    
+                    unitsHold = finalMead/consumption;
+                    unitsHoldLabel.innerHTML = Math.round(unitsHold).toLocaleString();
+    
+    
+    
+                    ResizeElements();
+    
+                }
+    
+                honeyHidden = false;
+                function HideHoney(){
+                    honeyForm = document.getElementById("honeyForm");
+                    honeySum = document.getElementById("honeySum");
+    
+                    hideHoneyBtn = document.getElementById("hideHoney")
+    
+                    if (honeyHidden == false){
+                        honeyForm.style.display = "none";
+                        honeySum.style.display = "none";
+    
+                        hideHoneyBtn.innerHTML = "SHOW"
+    
+                        honeyHidden = true;
+                    }
+                    else{
+                        honeyForm.style.display = "flex";
+                        honeySum.style.display = "block";
+    
+                        hideHoneyBtn.innerHTML = "HIDE"
+    
+                        honeyHidden = false;
+                    }
+                }
+    
+                distHidden = false;
+                function HideDist(){
+                    distForm = document.getElementById("distForm");
+                    distSum = document.getElementById("distSum");
+    
+                    hideDistBtn = document.getElementById("hideDist")
+    
+                    if (distHidden == false){
+                        distForm.style.display = "none";
+                        distSum.style.display = "none";
+    
+                        hideDistBtn.innerHTML = "SHOW"
+    
+                        distHidden = true;
+                    }
+                    else{
+                        distForm.style.display = "flex";
+                        distSum.style.display = "block";
+    
+                        hideDistBtn.innerHTML = "HIDE"
+    
+                        distHidden = false;
+                    }
+                }
+    
+                //only numeric input
+                po.onkeypress = function(){
+                    if (event.keyCode < 48 || event.keyCode > 57)
+                    {
+                        return false;
+                    }
+                }
+                productionInput.onkeypress = function(){
+                    if (event.keyCode < 48 || event.keyCode > 57)
+                    {
+                        return false;
+                    }
+                }
+            </script>
+        </section>
+    </main>
+    <script src="../dev-block.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,415 @@
+*{    cursor: url('/img/mouse1.png'), auto;
+
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+
+
+}
+body{
+  background-image:url(/img/background\ empire.png)  ;
+}
+
+
+
+.header {
+  display: flex;
+  justify-content: space-around; /* Distribute space evenly between items */
+  align-items: center;
+  background-color: #123; /* Background color of the header */
+  padding: 10px;
+  border-bottom: 2px solid #fff; /* Border to define the bottom edge */
+}
+
+.header a {
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center;
+  text-decoration: none;
+  color: white; /* Text color */
+}
+
+.header img {
+  width: 40px; /* Set a consistent width for images */
+  height: 40px; /* Set a consistent height for images */
+  margin-bottom: 5px; /* Space between image and text */
+}
+
+.header span {
+  font-size: 14px; /* Font size for the text */
+  text-transform: capitalize; /* Capitalize the first letter of each word */
+}
+
+/* Optional hover effect */
+.header a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+  border-radius: 8px; /* Rounded corners on hover */
+}
+
+
+.homesss {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgb(255, 0, 0);
+    flex-shrink: 0;
+}
+.homesss img{
+    width: 100%;
+}
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.profile h2{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+
+.menu{
+    background-color: #123;
+    width: 60px;
+    height: 100vh;
+    padding: 20px; 
+    overflow: hidden;
+
+}
+
+.menu:hover{
+    width: 300px;
+    transition: .5s;
+}
+ul{
+    list-style: none;
+    position: relative;
+    height: 95%;
+}
+ul li a{
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+ul li a:hover, .verysmart {
+    background-color: #ffffff55;
+    border-radius: 8%;
+
+}
+
+.yout1{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+.yout1 a{
+    background-color: #a00;
+    
+}
+ul li a i{
+    font-size: 30px;
+    text-decoration: none;
+
+}
+.brewery {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background-color: #251509;
+  padding: 1.5rem;
+  -moz-appearance: textfield; }
+  @media (max-width: 1300px) {
+    .brewery {
+      width: 90%; } }
+  @media (max-width: 8900px) {
+    .brewery {
+      width: 100%; } }
+  .brewery input::-webkit-outer-spin-button,
+  .brewery input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  .brewery p,
+  .brewery label {
+    margin: 0;
+    font-family: 'frutiger'; }
+  .brewery input[type=number] {
+    -moz-appearance: textfield; }
+  .brewery-title {
+    width: fit-content; }
+    .brewery-title p {
+      color: #312609;
+      font-size: 3rem; }
+  .brewery-production, .brewery-bonuses {
+    margin-top: 1.5rem; }
+    .brewery-production-title, .brewery-bonuses-title {
+      background-color: #8d6d1b;
+      padding: 1rem 1.3rem;
+      margin-bottom: 3px; }
+      .brewery-production-title p, .brewery-bonuses-title p {
+        color: #443326;
+        font-size: 2rem;
+        font-weight: 900; }
+  .brewery-bonuses-form {
+    background-color: #775036;
+    color: #a56f32;
+    padding: 1rem; }
+    .brewery-bonuses-form label {
+      font-size: 1.6rem;
+      margin-left: 1rem; }
+    .brewery-bonuses-form input[type=number],
+    .brewery-bonuses-form select,
+    .brewery-bonuses-form option {
+      width: 140px;
+      padding: .6rem .8rem;
+      border-radius: 0;
+      border: 1px solid #443326;
+      font-family: 'frutiger';
+      font-weight: 500;
+      font-size: 1.5rem;
+      color: #443326;
+      margin: 6px 0;
+      background-color: white; }
+      @media (max-width: 625px) {
+        .brewery-bonuses-form input[type=number],
+        .brewery-bonuses-form select,
+        .brewery-bonuses-form option {
+          width: 110px; } }
+  .brewery-apiary {
+    background-color: #362317;
+    color: #795731;
+    padding: 1rem; }
+    .brewery-apiary #apiaryPanel {
+      padding: 0 1rem 1rem 1rem !important; }
+    .brewery-apiary-container {
+      justify-content: space-evenly;
+      flex-direction: row;
+      padding: 0 1rem;
+      width: 100%; }
+      .brewery-apiary-container-apiary {
+        display: inline-block;
+        width: 19.6%; }
+        @media (max-width: 899px) {
+          .brewery-apiary-container-apiary {
+            width: 33%; } }
+        @media (max-width: 625px) {
+          .brewery-apiary-container-apiary {
+            width: 49.5%; } }
+        .brewery-apiary-container-apiary-buildicon {
+          display: flex;
+          justify-content: center; }
+          .brewery-apiary-container-apiary-buildicon img {
+            max-height: 18rem;
+            width: auto;
+            margin: 0 auto; }
+            @media (max-width: 625px) {
+              .brewery-apiary-container-apiary-buildicon img {
+                max-height: 10rem; } }
+        .brewery-apiary-container-apiary-params {
+          margin: 0 auto;
+          height: 60px;
+          display: flex;
+          justify-content: space-around;
+          flex-direction: row; }
+          .brewery-apiary-container-apiary-params select {
+            margin: 5px 2px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer;
+            color: #49432E;
+            font-weight: 800;
+            font-size: 1.4rem; }
+            .brewery-apiary-container-apiary-params select option {
+              font-size: 1.5rem; }
+            .brewery-apiary-container-apiary-params select:hover {
+              transform: scale(1.05); }
+          .brewery-apiary-container-apiary-params-lvl {
+            height: auto;
+            padding: .05rem  !important;
+            padding-left: .75rem !important;
+            width: 80px !important;
+            border-image-source: url() !important;
+            border-image-slice: 18 !important;
+            border-image-width: .7rem !important;
+            border-image-outset: 0 !important;
+            border-image-repeat: round !important;
+            background-color: #665542;
+            background-image: url();
+            background-repeat: no-repeat;
+            background-size: 1.8rem;
+            background-position: 90% 48%; }
+            .brewery-apiary-container-apiary-params-lvl option {
+              background-color: white; }
+          .brewery-apiary-container-apiary-params-baseelem {
+            background-image: url(); }
+          .brewery-apiary-container-apiary-params-relicelem {
+            background-image: url(); }
+          .brewery-apiary-container-apiary-params-baseelem, .brewery-apiary-container-apiary-params-relicelem {
+            text-align: center;
+            min-width: 50px;
+            height: 50px;
+            width: 50px !important;
+            background-color: transparent;
+            border: none !important;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            padding: 0 !important; }
+  .brewery-production-calculator {
+    background-color: #4b3121;
+    padding-bottom: .5rem; }
+    .brewery-production-calculator #productionOngoing {
+      padding: 1rem !important; }
+    .brewery-production-calculator p {
+      color: #7a4911;
+      font-weight: 400;
+      padding: 1rem; }
+      @media (max-width: 899px) {
+        .brewery-production-calculator p {
+          padding: .1rem; } }
+    .brewery-production-calculator img {
+      height: 65px;
+      width: auto;
+      margin-right: .5rem;
+      display: inline;
+      vertical-align: middle;
+      padding: .6rem; }
+      @media (max-width: 899px) {
+        .brewery-production-calculator img {
+          height: 40px;
+          margin-right: 0; } }
+      @media (max-width: 625px) {
+        .brewery-production-calculator img {
+          height: 30px;
+          margin-right: 0; } }
+    .brewery-production-calculator-sum, .brewery-production-calculator-result {
+      padding: 1.5rem .5rem;
+      display: inline-block; }
+      .brewery-production-calculator-sum .container, .brewery-production-calculator-result .container {
+        display: inline-table;
+        margin: 0 auto;
+        width: fit-content;
+        text-align: center; }
+      .brewery-production-calculator-sum p, .brewery-production-calculator-result p {
+        padding-bottom: 0;
+        color: #443326;
+        display: inline;
+        vertical-align: middle;
+        font-size: 2.3rem; }
+        @media (max-width: 1300px) {
+          .brewery-production-calculator-sum p, .brewery-production-calculator-result p {
+            font-size: 2.15rem; } }
+        @media (max-width: 899px) {
+          .brewery-production-calculator-sum p, .brewery-production-calculator-result p {
+            font-size: 2rem; } }
+        @media (max-width: 625px) {
+          .brewery-production-calculator-sum p, .brewery-production-calculator-result p {
+            font-size: 1.65rem; } }
+      .brewery-production-calculator-sum #honeyDifference, .brewery-production-calculator-result #honeyDifference {
+        font-size: 1.5rem !important;
+        display: block; }
+    .brewery-production-calculator-sum {
+      clip-path: polygon(0% 0%, 88% 0%, 95% 50%, 88% 100%, 0% 100%);
+      background-color: rgb(158, 110, 62);
+      width: 61%;
+      padding-right: 3rem; }
+      .brewery-production-calculator-sum #brewery-plus {
+        margin: 0 2.5rem; }
+        @media (max-width: 899px) {
+          .brewery-production-calculator-sum #brewery-plus {
+            margin: 0 1rem; } }
+        @media (max-width: 625px) {
+          .brewery-production-calculator-sum #brewery-plus {
+            margin: 0; } }
+    .brewery-production-calculator-result {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      clip-path: polygon(100% 0, 100% 100%, 0% 100%, 14% 50%, 0% 0%);
+      background-color: #ffecbc;
+      width: 24%;
+      padding-left: 1.85rem;
+      float: right; }
+      .brewery-production-calculator-result-box {
+        margin: 0 auto;
+        display: table; }
+  .brewery-production-control {
+    background-color: #583d29; }
+    .brewery-production-control-input, .brewery-production-control-slider {
+      display: inline-block; }
+    .brewery-production-control-input {
+      width: 26%; }
+      @media (min-width: 1600px) {
+        .brewery-production-control-input {
+          width: 20%; } }
+    .brewery-production-control input[type=number] {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      border-radius: 0;
+      border: 2px solid #443326;
+      margin: 2.5rem 1rem;
+      font-family: 'frutiger';
+      font-weight: 900;
+      font-size: 2.85rem;
+      text-align: center;
+      color: #443326; }
+      @media (max-width: 899px) {
+        .brewery-production-control input[type=number] {
+          padding: .7rem 1rem;
+          font-size: 2.6rem; } }
+      @media (max-width: 625px) {
+        .brewery-production-control input[type=number] {
+          padding: .6rem .4rem;
+          font-size: 1.65rem;
+          margin-right: 0; } }
+    .brewery-production-control-slider {
+      margin-left: 5rem;
+      width: 65%; }
+      @media (max-width: 899px) {
+        .brewery-production-control-slider {
+          margin-left: 1.75rem; } }
+      @media (max-width: 625px) {
+        .brewery-production-control-slider {
+          margin-left: 0.25rem; } }
+      @media (min-width: 1600px) {
+        .brewery-production-control-slider {
+          width: 70%; } }
+      .brewery-production-control-slider input[type=range] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 10px;
+        background: #b3895a;
+        outline: none; }
+        @media (max-width: 625px) {
+          .brewery-production-control-slider input[type=range] {
+            width: 90%;
+            float: right;
+            margin: 0; } }
+        .brewery-production-control-slider input[type=range]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 50px;
+          height: 37px;
+          border: 0;
+          background: url();
+          cursor: pointer; }
+      .brewery-production-control-slider input[type=range]::-moz-range-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 50px;
+        height: 37px;
+        border: 0;
+        border-radius: 0;
+        background: url();
+        cursor: pointer; }

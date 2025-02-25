@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="leg-sim.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> empire-wiki</title>
+    <link rel="icon" type="image/png" href="event.png"/>
+</head>
+<body>
+    <header class="header">
+        <a href="https://empire-wiki.netlify.app/">
+            <img src="/img/home.jpg" alt="الرئيسية">
+            <span>الرئيسية</span>
+        </a>
+        <a href="https://empire-wiki.netlify.app/smart-cal">
+            <img src="/img/smart-cal.png" alt="حاسبة ذكية">
+            <span>حاسبة ذكية</span>
+        </a>
+        <a href="https://empire-wiki.netlify.app/calculator">
+            <img src="/img/smart.png" alt="حاسبة التكلفة والإنتاج">
+            <span>حاسبة التكلفة والإنتاج</span>
+        </a>
+        <a href="#">
+            <img src="/img/event.png" alt="الأحداث">
+            <span>الأحداث</span>
+        </a>
+        <a href="#">
+            <img src="/img/tipss.png" alt="نصائح">
+            <span>نصائح</span>
+        </a>
+        <a href="#">
+            <img src="/img/war.png" alt="حرب">
+            <span>حرب</span>
+        </a>
+    </header>
+<main>
+    
+    <section class="section-guide">
+
+        
+
+        <label for="ltpe-booster"><p class="u-no-ver-margin">اختر معزز النباله التي تفعله:</p></label><br>
+        <select onchange="calculate()" name="ltpe-booster" id="ltpe-booster">
+            <option value="1">بدون معزز</option>
+            <option value="2">100%</option>
+            <option value="3">200%</option>
+            <option value="4">300%</option>
+            <option value="5">400%</option>
+            <option value="6">500%</option>
+            <option value="7">600%</option>
+            <option value="8">700%</option>
+            <option value="9">800%</option>
+        </select>
+        <label for="ltpe-tablets-exchange"><p class="u-no-ver-margin">اكتب كم عدد الواح الساموراي/البدو التي ستستبدلها في المره الواحده (علي الاقل 950 لوح بدو / عمله ساموراي):</p></label><br>
+        <input onkeyup="calculate()" onchange="calculate()" id="ltpe-tablets-exchange" type="number" placeholder="علي الاقل 950" style="width: 160px;"><br>
+        <label for="ltpe-tablets"><p class="u-no-ver-margin">عدد الالواح التي ستسبتدلها:</p></label><br>
+        <input onkeyup="calculate()" onchange="calculate()" id="ltpe-tablets" type="number" placeholder="مثال 2,500,000" style="width: 160px;"><br>
+        <label for="ltpe-attacks-1"><p class="u-no-ver-margin">اكتب عدد الهجمات علي البدو او الساموراي وعدد العملات التي ستحتصل عليها في الهجمه (علي الاقل 75 في الهجمه) <b>او</b> عدد الهجمات علي معسكرات البيرموند (علي الاقل 500 نقطه شجاعه في الهجمه):</p></label><br>
+        <input onkeyup="calculate()" onchange="calculate()" id="ltpe-attacks-1" type="number" placeholder="مثال 150" style="width: 160px;"><br>
+        <label for="ltpe-attacks-2"><p class="u-no-ver-margin">عدد الهجمات علي معسكرات البيرموند (علي الاقل 500 نقطه شجاعه في الهجمه):</p></label><br>
+        <input onkeyup="calculate()" onchange="calculate()" id="ltpe-attacks-2" type="number" placeholder="مثال 1,000" style="width: 160px;"><br>
+        <h3 id="result"></h3>
+
+
+        <script>
+            var numBooster = document.getElementById("ltpe-booster");
+            var numTablets = document.getElementById("ltpe-tablets");
+            var numTabletsExchange = document.getElementById("ltpe-tablets-exchange");
+            var numAttacks1 = document.getElementById("ltpe-attacks-1");
+            var numAttacks2 = document.getElementById("ltpe-attacks-2");
+
+            var lblResult = document.getElementById("result");        
+
+            /* function */
+            function calculate(){
+                booster = numBooster.value;
+                tablets = numTablets.value;
+                tabletsExchange = numTabletsExchange.value;
+                attacks1 = numAttacks1.value;
+                attacks2 = numAttacks2.value;
+
+                tabletsScore = 3 * ((tablets-tablets%tabletsExchange)/tabletsExchange) * booster;
+                attacks1Score = 2 * attacks1 * booster;
+                attacks2Score = 3 * attacks2 * booster;
+
+                totalScore = tabletsScore + attacks1Score + attacks2Score;
+
+                if (!isNaN(Math.round(totalScore))){
+                    lblResult.innerHTML = "إن القيام بجميع الأنشطة المحددة أعلاه سوف يكسبك " + Math.round(totalScore).toLocaleString() + " seasonal points";
+                    
+                }
+                else{
+                    lblResult.innerHTML = "من فضلك املئ كل الفراغات";
+                }
+
+            }
+        </script>
+    </section>
+</main>
+<script src="../dev-block.js"></script>
+
+</body>
+</html>

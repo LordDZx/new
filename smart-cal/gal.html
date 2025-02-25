@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="leg-sim.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> empire-wiki</title>
+    <link rel="icon" type="image/png" href="event.png"/>
+</head>
+<body>
+    <header class="header">
+        <a href="https://empire-wiki.netlify.app/">
+            <img src="/img/home.jpg" alt="الرئيسية">
+            <span>الرئيسية</span>
+        </a>
+        <a href="https://empire-wiki.netlify.app/smart-cal">
+            <img src="/img/smart-cal.png" alt="حاسبة ذكية">
+            <span>حاسبة ذكية</span>
+        </a>
+        <a href="https://empire-wiki.netlify.app/calculator">
+            <img src="/img/smart.png" alt="حاسبة التكلفة والإنتاج">
+            <span>حاسبة التكلفة والإنتاج</span>
+        </a>
+        <a href="#">
+            <img src="/img/event.png" alt="الأحداث">
+            <span>الأحداث</span>
+        </a>
+        <a href="#">
+            <img src="/img/tipss.png" alt="نصائح">
+            <span>نصائح</span>
+        </a>
+        <a href="#">
+            <img src="/img/war.png" alt="حرب">
+            <span>حرب</span>
+        </a>
+    </header>
+
+<main>
+    
+    <section class="section-guide">
+
+        
+
+        <label for="pgge-points"><p class="u-no-ver-margin">كم عدد نقاط الشجاعه التي تمتلكها حاليا:</p></label><br>
+        <input onkeyup="calculate()" onchange="calculate()" id="pgge-points" type="number" placeholder="مثال 150,000" style="width: 160px;"><br>
+        <label for="pgge-time"><p class="u-no-ver-margin">أكتب عدد الأيام :</p></label><br>
+        <input onkeyup="calculate()" onchange="calculate()" id="pgge-time" type="number" placeholder="مثال 11" style="width: 160px;"><br>
+        <h3 id="result"></h3>
+        <p id="detailed-result" style="font-family: Arial; font-size: 1.5rem; display: none;">أحسب عدد النقاط يوم بعد يوم</p>
+
+
+        <script>
+            var numPoints = document.getElementById("pgge-points");
+            var numTime = document.getElementById("pgge-time");
+            var lblResult = document.getElementById("النتائح");
+            var lblDetailedResult = document.getElementById("detailed-result");            
+
+            /* function */
+            function calculate(){
+                points = numPoints.value;
+                time = numTime.value;
+                pointsMax = 25000000;
+                timeMax = 365;
+                pointsMin = 0;
+                timeMin = 0;
+
+                if (points > pointsMax){
+                    numPoints.value = pointsMax;
+                }
+                if (time > timeMax){
+                    numTime.value = timeMax;
+                }
+
+                if (points < pointsMin){
+                    numPoints.value = pointsMin;
+                }
+                if (time < timeMin){
+                    numTime.value = timeMin;
+                }
+                
+                lblDetailedResult.innerHTML = "";
+                var i;
+                for (i = 0; i < time; i++) {
+                    points=points-((points/100)*7);
+
+                    lblDetailedResult.innerHTML+= `يوم ` + (i+1) + `: ` + Math.round(points).toLocaleString() + "<br />";
+                }
+
+                lblDetailedResult.style.display = "block";
+
+                lblResult.innerHTML = "بعد " + time + " الأيام المحدده ستملك " + Math.round(points).toLocaleString() + " نقطه شجاعه";
+            }
+        </script>
+    </section>
+</main>
+<script src="../dev-block.js"></script>
+
+</body>
+</html>

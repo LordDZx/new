@@ -1,0 +1,119 @@
+/* styles.css */
+
+/* تعيين الخط الافتراضي لكل الصفحة */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url(empiree.png);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* تنسيق الحاوية المركزية */
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* تنسيق العناوين */
+h1, h2 {
+    color: #4a90e2;
+    margin-bottom: 20px;
+}
+
+/* تنسيق الحقول والنماذج */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+/* تنسيق الأزرار */
+.form-group button {
+    padding: 15px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+    background-color: #357abd;
+}
+
+/* تنسيق الرسائل الخطأ */
+.error {
+    color: #d9534f;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* تنسيق رابط تسجيل الخروج */
+.logout {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    color: #4a90e2;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.logout:hover {
+    text-decoration: underline;
+}
+
+/* تنسيق النماذج المختلفة */
+.login-form {
+    display: none;
+}
+
+#login-username {
+    display: block;
+}
+
+#toggle-login {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#toggle-login:hover {
+    background-color: #357abd;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شكرًا لتواصلك معنا</title>
+    <link rel="stylesheet" href="/css/thanks.css">
+    <link rel="icon" type="image/x-icon" href="/img/event.png">
+
+</head>
+<body class="light-mode">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Empire-wiki contact us</h1>
+                <p>تم ارسال رسالتك بنجاح ..!</p>
+            </div>
+            <div class="theme-switch">
+                <button class="header-button" id="toggleThemeButton"></button>
+                <span id="themeLabel">الوضع الداكن</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="message-box">
+                <h2>شكرًا لتواصلك معنا!</h2>
+                <p>نحن نقدر وقتك وملاحظاتك. سنقوم بالرد عليك في أقرب وقت ممكن.
+                <br>شكرا لك لأرسال رأيك او اقتراحك لنا عن موقعنا
+                <br>ان كان هناك المزيد من الاقتراحات او لديك رأي اخر لا تترد في التواصل معنا
+                <br>اضغط علي الزر في الاسفل للعوده الي الموقع الاصلي
+                </p>
+                <button id="goHomeButton">انتقل إلى موقعنا</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; جميع الحقوق محفوظه بتاريخ 2024</p>
+        </div>
+    </footer>
+
+    <script src="scriptss.js"></script>
+        <script>
+        // هذا السكربت يجعل الزر يفتح الرابط في نفس الصفحة.
+        document.getElementById('goHomeButton').addEventListener('click', function() {
+            window.location.href = 'https://empire-wiki.netlify.app/';
+        });
+    </script>
+    <script src="dev-block.js"></script>
+
+</body>
+</html>

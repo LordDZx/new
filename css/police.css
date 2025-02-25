@@ -1,0 +1,340 @@
+/* التأثيرات العامة للجسم */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ترويسة الموقع */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* تأثيرات الأزرار */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    background-color: #388e3c;
+    transform: scale(1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* التأثيرات على الأقسام */
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+section:hover {
+    background-color: #e0f7fa;
+    transform: translateY(-5px);
+}
+
+/* تذييل الموقع */
+footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* تأثيرات النصوص */
+h1, h2 {
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* تأثيرات النصوص عند التمرير */
+h1:hover, h2:hover {
+    color: #00796b;
+    transform: translateY(-3px);
+}
+
+/* الروابط */
+a {
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: #388e3c;
+    text-decoration: underline;
+}
+
+/* تأثيرات التلاشي والانتقال */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* تأثيرات CSS عند التمرير باستخدام IntersectionObserver */
+section.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* تأثيرات التمرير Parallax */
+.parallax {
+    background-image: url('path-to-image.jpg');
+    height: 500px;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* تأثيرات الرسوم المتحركة على التمرير */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* تأثيرات النقر */
+.clicked {
+    background-color: #dcdcdc;
+    transform: scale(0.95);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* تأثيرات عرض شرائح الصور */
+.slide {
+    display: none;
+}
+.slide:first-child {
+    display: block;
+}
+.prev, .next {
+    cursor: pointer;
+}
+
+/* تأثيرات قائمة منسدلة */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* تأثيرات الكتابة المتحركة */
+.typewriter {
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid;
+    animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
+
+/* إشعارات */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #444;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* تأثيرات التلميحات (Tooltip) */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* تعديل الموقع حسب الحاجة */
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+/* استعلامات الوسائط للأجهزة المحمولة */
+@media (max-width: 767px) {
+    /* ترويسة الموقع */
+    header {
+        padding: 15px;
+        font-size: 1.2em;
+    }
+
+    /* الأزرار */
+    button {
+        padding: 8px 16px;
+    }
+
+    /* تأثيرات النصوص */
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    /* تذييل الموقع */
+    footer {
+        font-size: 0.9em;
+    }
+
+    /* تأثيرات عرض شرائح الصور */
+    .slide {
+        height: 200px;
+    }
+
+    /* قائمة منسدلة */
+    .dropdown-content {
+        width: 100%;
+        box-shadow: none;
+    }
+}
+
+/* استعلامات الوسائط للأجهزة اللوحية */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* ترويسة الموقع */
+    header {
+        padding: 18px;
+        font-size: 1.5em;
+    }
+
+    /* الأزرار */
+    button {
+        padding: 10px 18px;
+    }
+
+    /* تأثيرات النصوص */
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    /* تذييل الموقع */
+    footer {
+        font-size: 1em;
+    }
+}
+
+/* استعلامات الوسائط للأجهزة الأكبر من 1024px */
+@media (min-width: 1025px) {
+    /* ترويسة الموقع */
+    header {
+        padding: 20px;
+        font-size: 2em;
+    }
+
+    /* الأزرار */
+    button {
+        padding: 12px 24px;
+    }
+
+    /* تأثيرات النصوص */
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    /* تذييل الموقع */
+    footer {
+        font-size: 1.1em;
+    }
+}

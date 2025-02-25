@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="leg-sim.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> empire-wiki</title>
+    <link rel="icon" type="image/png" href="event.png"/>
+</head>
+<body>
+    <header class="header">
+        <a href="https://empire-wiki.netlify.app/">
+            <img src="/img/home.jpg" alt="الرئيسية">
+            <span>الرئيسية</span>
+        </a>
+        <a href="https://empire-wiki.netlify.app/smart-cal">
+            <img src="/img/smart-cal.png" alt="حاسبة ذكية">
+            <span>حاسبة ذكية</span>
+        </a>
+        <a href="https://empire-wiki.netlify.app/calculator">
+            <img src="/img/smart.png" alt="حاسبة التكلفة والإنتاج">
+            <span>حاسبة التكلفة والإنتاج</span>
+        </a>
+        <a href="#">
+            <img src="/img/event.png" alt="الأحداث">
+            <span>الأحداث</span>
+        </a>
+        <a href="#">
+            <img src="/img/tipss.png" alt="نصائح">
+            <span>نصائح</span>
+        </a>
+        <a href="#">
+            <img src="/img/war.png" alt="حرب">
+            <span>حرب</span>
+        </a>
+    </header>
+
+
+<main>
+    <section class="section-guide">
+
+        <label for="pgge-points"><p class="u-no-ver-margin">اكتب كم عدد نقاط المجد التي  توجد معك:</p></label><br>
+        <input onkeyup="calculate()" onchange="calculate()" id="pgge-points" type="number" placeholder="مثال 9,000,000" style="width: 160px;"><br>
+        <label for="pgge-time"><p class="u-no-ver-margin">اكتب عدد الايام التي تريد معرفه كم ستخسر مجد فيها:</p></label><br>
+        <input onkeyup="calculate()" onchange="calculate()" id="pgge-time" type="number" placeholder="مثال 30" style="width: 160px;"><br>
+        <label for="pgge-sub" style="display: inline-block;"><p class="u-no-ver-margin"> اشتراك اللاعب رفم .1 مفعل:&nbsp;</p></label>
+        <input type="checkbox" onchange="calculate()" id="pgge-sub" style="display: inline-block; text-align: center;">
+        <h3 id="result"></h3>
+        <p id="detailed-result" style="font-family: Arial; font-size: 1.5rem; display: none;">اعرف المجد التي ستفقده يوما بعد يوم</p>
+
+
+        <script>
+            var numPoints = document.getElementById("pgge-points");
+            var numTime = document.getElementById("pgge-time");
+            var lblResult = document.getElementById("result");
+            var lblDetailedResult = document.getElementById("detailed-result");            
+
+            /* function */
+            function calculate(){
+                points = numPoints.value;
+                time = numTime.value;
+                pointsMax = 1000000000;
+                timeMax = 365;
+                pointsMin = 0;
+                timeMin = 0;
+
+                if (points > pointsMax){
+                    numPoints.value = pointsMax;
+                }
+                if (time > timeMax){
+                    numTime.value = timeMax;
+                }
+
+                if (points < pointsMin){
+                    numPoints.value = pointsMin;
+                }
+                if (time < timeMin){
+                    numTime.value = timeMin;
+                }                
+                
+                lblDetailedResult.innerHTML = "";
+
+                lostPoints = 0;
+
+                var i;
+                for (i = 0; i < time; i++) {
+
+                    switch(true){
+                        case (points<1480):
+                            lostPoints=0;
+                            break;
+                        case (points<7960):
+                            lostPoints=1;
+                            break;
+                        case (points<183100):
+                            lostPoints=2;
+                            break;
+                        case (points<237700):
+                            lostPoints=3;
+                            break;
+                        case (points<298700):
+                            lostPoints=4;
+                            break;
+                        case (points<367700):
+                            lostPoints=5;
+                            break;
+                        case (points<446300):
+                            lostPoints=6;
+                            break;
+                        case (points<489700):
+                            lostPoints=7;
+                            break;
+                        case (points<536100):
+                            lostPoints=8;
+                            break;
+                        case (points<586100):
+                            lostPoints=9;
+                            break;
+                        case (points>=586100):
+                            lostPoints=10;
+                            break;
+                    }
+
+                    if (document.getElementById("pgge-sub").checked){
+                        lostPoints -= 2;
+                    }
+                
+
+                    if (lostPoints<0) {lostPoints=0}
+                    points=points-((points/100)*lostPoints);
+
+                    lblDetailedResult.innerHTML+= `يوم ` + (i+1) + `: ` + Math.round(points).toLocaleString() + "&nbsp;&nbsp;&nbsp;(-" + lostPoints + "%)" + "<br />";
+                }
+
+                lblDetailedResult.style.display = "block";
+
+                lblResult.innerHTML = "بعد " + time + " ايام سيبقي معك " + Math.round(points).toLocaleString() + " نقاط مجد";
+            }
+        </script>
+    </section>
+</main>
+<script>
+            
+    var topBtn = document.getElementById("topBtn");
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        topBtn.style.display = "block";
+    } else {
+        topBtn.style.display = "none";
+    }
+    }
+
+    function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    }
+    </script>
+                    <script src="../dev-block.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="smart.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css"rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/img/event.png">
+    <title>empire-wiki |Courtyard cal</title>
+</head>
+<body>
+    <main>
+        <section class="section-guide">
+            <div class="nav-links">
+                <a href="https://empire-wiki.netlify.app/" class="nav-link"><img src="/img/home.jpg" alt="Home Icon"> الرئيسية</a>
+                <a href="https://empire-wiki.netlify.app/calculator" class="nav-link"><img src="/img/smart.png" alt="Costs Icon"> التكاليف</a>
+                <a href="https://empire-wiki.netlify.app/smart-cal" class="nav-link"><img src="/img/smart-cal.png" alt="Smart Calculator Icon"> حاسبة ذكية</a>
+                <a href="#" class="nav-link"><img src="/img/events.png" alt="Events Icon"> احداث</a>
+                <a href="#" class="nav-link"><img src="/img/tipss.png" alt="Tips Icon"> نصائح</a>
+                <a href="https://empire-wiki.netlify.app/News" class="nav-link"><img src="/img/last-news.png" alt="Latest News Icon"> اخر الاخبار</a>
+              </div>
+    
+            <div class="calculator">
+                <div class="calculator-heading">
+                    <div class="calculator-title">
+                        <p>Courtyard limit calculator</p>
+                    </div>
+                </div>
+
+                <div class="calculator-bonuses">
+                    <div class="calculator-bonuses-title">
+                        <p>المباني الي بتعطي مكافأت:</p>
+                    </div>
+                    <form class="calculator-bonuses-form" onsubmit="return false;">
+                        <div class="row">
+                            <div class="col-md-4 col-6 col-sm-4 col-lg-4 form-group">
+                                <label for="keep">القلعه لفل</label>
+                                <select name="keep" id="keep" class="form-control2" onchange="calculateDefenders()">
+                                    <option value="1">مستوي 1</option>
+                                    <option value="2">مستوي 2</option>
+                                    <option value="3">مستوي 3</option>
+                                    <option value="4">مستوي 4</option>
+                                    <option value="5">مستوي 5</option>
+                                    <option value="6">مستوي 6</option>
+                                    <option value="7">مستوي 7</option>
+                                    <option value="8">مستوي 8</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="col-md-4 col-6 col-sm-4 col-lg-4 form-group">
+                                <label for="stronghold">الحصن مستوي</label>
+                                    <select name="stronghold" id="stronghold" class="form-control2" onchange="calculateDefenders()">
+                                        <option value="0">ليس مبني / اضغط</option>
+                                        <option value="1">مستوي 1</option>
+                                        <option value="2">مستوي 2</option>
+                                        <option value="3">مستوي 3</option>
+                                        <option value="4">مستوي 4</option>
+                                        <option value="5">مستوي 5</option>
+                                    </select>
+                            </div>
+                            <br>
+                            <div class="col-md-4 col-6 col-sm-4 col-lg-4 form-group">
+                                <label for="vault">مستوي مبني مخزن الامانات (تحديث جديد)</label>
+                                <select name="vault" id="vault" class="form-control2" onchange="calculateDefenders()">
+                                    <option value="0">ليس مبني / اضغط</option>
+                                    <option value="1">مستوي 1</option>
+                                    <option value="2">مستوي 2</option>
+                                    <option value="3">مستوي 3</option>
+                                    <option value="4">مستوي 4</option>
+                                    <option value="5">مستوي 5</option>
+                                    <option value="6">مستوي 6</option>
+                                    <option value="7">مستوي 7</option>
+                                    <option value="8">مستوي 8</option>
+                                    <option value="9">مستوي 9</option>
+                                    <option value="10">مستوي 10</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="col-md-4 col-6 col-sm-4 form-group">
+                                <label for="guardhouse">مبني الحراسه</label>
+                                <input type="number" value="0" id="guardhouse" min="0" max="30" class="form-control2" onchange="calculateDefenders()">
+                            </div>
+
+                            <div class="col-md-4 col-6 col-sm-4 form-group">
+                                <label for="guardhouselevel">مبني الحراسه لفل</label>
+                                <select name="guardhouselevel" id="guardhouselevel" class="form-control2" onchange="calculateDefenders()">
+                                    <option value="0">ليس مبني / اضغط</option>
+                                    <option value="1">مستوي 1</option>
+                                    <option value="2">مستوي 2</option>
+                                    <option value="3">مستوي 3</option>
+                                    <option value="4">مستوي 4</option>
+                                    <option value="5">مستوي 5</option>
+                                    <option value="6">مستوي 6</option>
+                                    <option value="7">مستوي 7</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="calculator-bonuses-title">
+                        <p>بعض الاشياء التي تعطي تأثيرا:</p>
+                    </div>
+                    <form class="calculator-bonuses-form" onsubmit="return false;">
+                        <div class="row">
+                            <div class="col-6 form-group">
+                                <label for="generalrarity">General rarity</label>
+                                <select name="generalrarity" id="generalrarity" class="form-control2" onchange="calculateDefenders()">
+                                    <option value="0">لا يوجد</option>
+                                    <option value="1">اسطوري</option>
+                                    <option value="2">ملحمي</option>
+                                    <option value="3">نادر</option>
+                                </select>
+                            </div>
+                            <div class="col-6 form-group">
+                                <label for="generalPoints">قدره الساحه لديك</label>
+                                <input type="number" value="0" id="generalPoints" min="0" max="12" class="form-control2" onchange="calculateDefenders()">
+                            </div>
+                            <div class="col-6 form-group">
+                                <label for="otherBonuses1">مكافآت الهيئه</label>
+                                <input type="number" value="0" id="otherBonuses1" min="0" class="form-control2" onchange="calculateDefenders()">
+                            </div>
+                            <div class="col-6 form-group">
+                                <label for="otherBonuses2">مكافأت العناصر</label>
+                                <input type="number" value="0" id="otherBonuses2" min="0" class="form-control2" onchange="calculateDefenders()">
+                            </div>                  
+                        </div>
+                    </form>
+
+                </div>
+                <div class="calculator-bonuses">
+                    <div class="calculator-bonuses-title">
+                        <p class="il">عدد حد جنود ساحتك :</p>
+                        <p><span id="total-defenders">-</span></p>
+                    </div>
+                </div>
+        </section>
+
+        <script>
+            function calculateDefenders() {
+                var input = document.getElementById('generalPoints');
+                if (input.value > 12) {
+                    input.value = 12;
+                }
+
+                var keepValue = document.getElementById("keep").value;
+                var strongholdValue = document.getElementById("stronghold").value;
+                var vaultValue = document.getElementById("vault").value;
+                var guardhouseValue = document.getElementById("guardhouse").value;
+                var guardhouseLevelValue = document.getElementById("guardhouselevel").value;
+                var generalRarityValue = document.getElementById("generalrarity").value;
+                var generalPointsValue = document.getElementById("generalPoints").value;
+                var othersValue1 = parseInt(document.getElementById("otherBonuses1").value);
+                var othersValue2 = parseInt(document.getElementById("otherBonuses2").value);
+
+                if (isNaN(othersValue1)) {
+                    othersValue1 = 0;
+                }
+                if (isNaN(othersValue2)) {
+                    othersValue2 = 0;
+                }
+
+                var keepValues = [10000, 50000, 100000, 150000, 200000, 250000, 300000, 350000];
+                var strongholdValues = [0, 7500, 15000, 30000, 45000, 60000];
+                var vaultValues = [0, 5000, 10000, 15000, 20000, 25000, 30000, 40000, 50000, 55000, 65000];
+                var guardhouseValues = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000];
+                var generalRarityValues = [0, 7500, 6500, 5000];
+
+                var keep = keepValues[keepValue - 1];
+                var stronghold = strongholdValues[strongholdValue];
+                var vault = vaultValues[vaultValue];
+                var guardhouse = guardhouseValues[guardhouseLevelValue] * guardhouseValue;
+                var general = generalRarityValues[generalRarityValue] * generalPointsValue;
+                var totalDefenders = keep + stronghold + vault + guardhouse + general + othersValue1 + othersValue2;
+
+                document.getElementById("total-defenders").innerHTML = totalDefenders + " جندي";
+            }
+
+            calculateDefenders();
+        </script>
+    </main>
+    <script src="../dev-block.js"></script>
+
+</body>
+</html>

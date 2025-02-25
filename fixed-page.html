@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الموقع تحت الصيانة</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('background empire.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+        }
+        .logo img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+        .message {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in;
+        }
+        .details {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+        .contact {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        .contact a {
+            color: #ffdd57;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .contact a:hover {
+            color: #ffffff;
+            border-bottom: 2px solid #ffdd57;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        .social-links a {
+            font-size: 40px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #ffdd57;
+            transform: scale(1.2) rotate(15deg);
+        }
+        .back-button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+    <!-- Font Awesome for social icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="شعار الموقع">
+        </div>
+        <div class="message">
+            🔧 الموقع تحت الصيانة! 🔧
+        </div>
+        <div class="details">
+            نعتذر عن أي إزعاج قد تسببه لك هذه الصفحة. نحن نقوم حاليًا بإجراء تحديثات ضرورية لتحسين تجربتك. سنعود قريبًا.
+        </div>
+        <div class="contact">
+            للتواصل معنا، يمكنك استخدام الروابط التالية:
+        </div>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61558933496823" target="_blank" title="فيسبوك">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://wa.me/+201098662418?text=مرحبا!%20أحتاج%20معلومات%20عن%20تحديثات%20empire-wiki%20الجديدة." target="_blank" title="واتساب">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <a href="https://empire-wiki.netlify.app/" class="back-button">العودة إلى الصفحة الرئيسية</a>
+    </div>
+    <script src="dev-block.js"></script>
+
+</body>
+
+</html>

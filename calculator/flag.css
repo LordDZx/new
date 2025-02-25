@@ -1,0 +1,182 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+        cursor: url('/img/mouse1.png'), auto;
+   
+    
+}
+body{
+   background: linear-gradient(to bottom, #283048, #71929e);
+    background-repeat: no-repeat;
+
+}
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: #4e342e;
+  padding: 10px;
+}
+.header a {
+  text-decoration: none;
+  color: #000;
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+}
+.header img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+.header span {
+  font-size: 16px;
+}
+
+/*
+.homesss {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgb(255, 0, 0);
+    flex-shrink: 0;
+}
+.homesss img{
+    width: 100%;
+}
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.profile h2{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+
+.menu{
+    background-color: #123;
+    width: 60px;
+    height: 100vh;
+    padding: 20px; 
+    overflow: hidden;
+
+}
+.menu:hover{
+    width: 260px;
+    transition: .5s;
+}
+ul{
+    list-style: none;
+    position: relative;
+    height: 95%;
+}
+ul li a{
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+ul li a:hover, .smartss {
+    background-color: #ffffff55;
+    border-radius: 8%;
+
+}
+
+.yout1{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+.yout1 a{
+    background-color: #a00;
+    
+}
+ul li a i{
+    font-size: 30px;
+    text-decoration: none;
+
+}*/
+.costs-table {
+    border: 3px solid #fa7d00;
+    background-color: #615252;
+    width: 260px; /* changed from width to max-width */
+    text-align: center;
+    table-layout: auto; /* changed from fixed to auto */
+    padding: 10px;
+    margin: 2rem; /* changed from 30px to 1rem */
+    flex-grow: 1; /* added flex-grow to make the table flexible */
+    flex-basis: 0; /* changed from auto to 0 */
+}
+    @media (max-width: 1300px) {
+      .costs-table {
+        width: 45%; } }
+    @media (max-width: 625px) {
+      .costs-table {
+        width: 100%;
+        margin: .4rem; } }
+    .costs-table-wide {
+      width: 45%; }
+      @media (max-width: 625px) {
+        .costs-table-wide {
+          width: 100%; } }
+  
+  .costs-table img {
+    height: 125px;
+    width: auto; }
+  
+  .costs-table th {
+    overflow-wrap: break-word;
+    font-family: 'Open Sans'; }
+  
+  .costs-table td, .costs-table th {
+    padding: 4px 4px !important; }
+  
+  .costs-table thead {
+    width: 100%;
+    background: #806853; }
+    .costs-table thead td {
+      width: 100%;
+      font-family: 'Open Sans';
+      font-size: 2rem; }
+  
+  .costs-table tbody td {
+    font-size: 1.8rem;
+    font-family: 'Open Sans'; }
+    .costs-table tbody td img {
+      width: 13%;
+      height: auto; }
+      @media (max-width: 625px) {
+        .costs-table tbody td img {
+          width: 55%; } }
+  
+  .costs-table tbody tr:nth-child(even) {
+    background: #D8C2A7; }
+  
+  .costs-table thead th {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #F0F0F0; }
+  
+  .costs-table thead th:first-child {
+    border-left: none; }
+  
+  .costs-table tfoot {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #F0F0F0;
+    background: #806853; }
+  
+  .costs-table tfoot td {
+    font-size: 1.8rem;
+    font-family: 'Open Sans'; }
+  
